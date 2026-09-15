@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حذف الحساب - نبراس GP</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    background: #f4f5f7;
+    color: #333;
+    line-height: 1.8;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    max-width: 600px;
+    width: 100%;
+    background: #fff;
+    border-radius: 18px;
+    padding: 40px 30px;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+  }
+  h1 {
+    color: #3a5570;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e8ecf1;
+  }
+  p {
+    font-size: 15.5px;
+    color: #444;
+    margin-bottom: 15px;
+    text-align: justify;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #3a5570;
+  }
+  input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d1d9e0;
+    border-radius: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    transition: border 0.3s;
+  }
+  input[type="email"]:focus {
+    outline: none;
+    border-color: #4a6b8a;
+  }
+  button {
+    width: 100%;
+    padding: 14px;
+    background: #4a6b8a;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  button:hover { background: #3a5570; }
+  .note {
+    background: #fff8e1;
+    border-right: 4px solid #ffc107;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-top: 20px;
+    color: #6d5a00;
+  }
+  .footer {
+    text-align: center;
+    color: #888;
+    font-size: 13.5px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e8ecf1;
+  }
+  .hidden { display: none; }
+  .success {
+    background: #e8f5e9;
+    border-right: 4px solid #4caf50;
+    padding: 15px;
+    border-radius: 8px;
+    color: #2e7d32;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
 
+<div class="container">
+  <h1>حذف الحساب</h1>
+  <p>إذا كنت ترغب في حذف حسابك في تطبيق <strong>"نبراس GP"</strong> وجميع بياناتك، يرجى إدخال بريدك الإلكتروني أدناه، وسيتم حذف حسابك خلال مدة أقصاها 30 يومًا من تاريخ الطلب.</p>
+
+  <form id="deleteForm">
+    <label for="email">البريد الإلكتروني المسجل:</label>
+    <input type="email" id="email" placeholder="example@email.com" required>
+    <button type="submit">طلب حذف الحساب</button>
+  </form>
+
+  <div id="successMessage" class="success hidden">
+    ✅ تم استلام طلبك بنجاح. سيتم حذف حسابك خلال 30 يومًا كحد أقصى.
+  </div>
+
+  <div class="note">
+    <strong>ملاحظة:</strong> يمكنك أيضًا حذف حسابك مباشرة من داخل التطبيق عبر القائمة المنسدلة → "حذف حسابي".
+  </div>
+
+  <p class="footer">© 2026 نبراس GP. جميع الحقوق محفوظة.</p>
+</div>
+
+<script>
+document.getElementById('deleteForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = document.getElementById('email').value;
+
+  if (!email) return;
+
+  // هنا يمكنك ربط النموذج بخدمة مثل Formspree أو Google Forms
+  // أو ببساطة إرسال بريد إلكتروني لك يدويًا.
+
+  // لأغراض العرض، نُظهر رسالة نجاح:
+  document.getElementById('deleteForm').classList.add('hidden');
+  document.getElementById('successMessage').classList.remove('hidden');
+
+  // يمكنك إضافة كود لإرسال البريد إلى nibrasalsd@gmail.com
+  // مثلاً باستخدام mailto أو API خارجي.
+});
+</script>
+
+</body>
+</html>
