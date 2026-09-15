@@ -1,145 +1,250 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - نبراس | Privacy Policy</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; padding: 20px; max-width: 800px; margin: auto; color: #333; background-color: #f9f9f9; }
-        h1 { color: #4a6a8a; text-align: center; border-bottom: 2px solid #4a6a8a; padding-bottom: 10px; }
-        h2 { color: #4a6a8a; }
-        .section { background-color: #fff; padding: 15px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        .divider { margin: 30px 0; border-top: 2px dashed #4a6a8a; }
-        .english-section { direction: ltr; text-align: left; }
-        .footer { margin-top: 30px; font-size: 0.9em; color: #666; text-align: center; border-top: 1px solid #ccc; padding-top: 15px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سياسة الخصوصية - نبراس</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f4f7fc;
+    color: #1a2b3c;
+    line-height: 1.8;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  }
+  h1 {
+    color: #4a6a8a;
+    border-bottom: 2px solid #eaeef2;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 26px;
+  }
+  h2 {
+    color: #4a6a8a;
+    margin-top: 30px;
+    margin-bottom: 12px;
+    font-size: 20px;
+    border-right: 4px solid #4a6a8a;
+    padding-right: 12px;
+  }
+  .date {
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+  p, li {
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+  ul { padding-right: 25px; }
+  a { color: #4a6a8a; }
+  .lang-switch {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .lang-switch button {
+    background: #4a6a8a;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 15px;
+  }
+  .lang-switch button:hover { background: #3a5a7a; }
+  .en { display: none; direction: ltr; text-align: left; }
+  .en h2 { border-right: none; border-left: 4px solid #4a6a8a; padding-right: 0; padding-left: 12px; }
+  .en ul { padding-right: 0; padding-left: 25px; }
+  footer {
+    text-align: center;
+    color: #8b949e;
+    font-size: 14px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #eaeef2;
+  }
+  @media (max-width: 500px) {
+    .container { padding: 20px 15px; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
+  }
+</style>
 </head>
 <body>
+<div class="container">
 
-<h1>سياسة الخصوصية</h1>
-<p style="text-align: center;">آخر تحديث: 30 أغسطس 2026</p>
+  <div class="lang-switch">
+    <button onclick="showLang('ar')">🇸🇦 العربية</button>
+    <button onclick="showLang('en')">🇬🇧 English</button>
+  </div>
 
-<div class="section">
-<h2>التعريفات</h2>
-<p><strong>التطبيق:</strong> يشير إلى "نبراس GP".<br>
-<strong>المطور:</strong> يشير إلى <strong>عبدالله حسين المطيري</strong>.<br>
-<strong>الخدمة:</strong> تشير إلى التطبيق أو الموقع الإلكتروني.</p>
+  <!-- ================= النسخة العربية ================= -->
+  <div class="ar">
+    <h1>سياسة الخصوصية</h1>
+    <p class="date">آخر تحديث: 15 سبتمبر 2026</p>
+
+    <h2>التعريفات</h2>
+    <ul>
+      <li><b>التطبيق:</b> يشير إلى "نبراس GP".</li>
+      <li><b>المطور:</b> يشير إلى عبدالله حسين المطيري.</li>
+      <li><b>الخدمة:</b> تشير إلى التطبيق أو الموقع الإلكتروني.</li>
+    </ul>
+
+    <h2>جمع واستخدام المعلومات</h2>
+    <p>نظام "نبراس GP" يعمل بنظامين:</p>
+    <p><b>1. الاستخدام كضيف:</b> يمكنك استخدام الخدمة دون تسجيل، وفي هذه الحالة لا نجمع أي معلومات شخصية، ويكون استخدامك محدوداً بعدد أسئلة يومي.</p>
+    <p><b>2. الاستخدام كعضو مسجل:</b> يتم التسجيل عبر نظام "كود الدعوة" الذي يمنحه لك المطور. عند التسجيل، نجمع ونخزن:</p>
+    <ul>
+      <li>البريد الإلكتروني (لمعرّف حسابك).</li>
+      <li>كلمة المرور <b>مشفرة</b> باستخدام خوارزميات تشفير آمنة (لا يمكن لأي شخص، بما في ذلك المطور، قراءتها).</li>
+      <li>إعداداتك (مثل جنس الصوت المفضل).</li>
+      <li>سجل محادثاتك (لمتابعة محادثاتك السابقة).</li>
+    </ul>
+    <p>نحن <b>لا نبيع</b> بياناتك ولا نشاركها مع أي طرف ثالث لأغراض تجارية.</p>
+
+    <h2>بيانات الاستخدام</h2>
+    <p>عند وصولك إلى الخدمة، قد نجمع عنوان الـ IP الخاص بك ونوع المتصفح لأغراض أمنية ومنع إساءة الاستخدام والحد من الطلبات المتكررة. لا يتم تخزين هذه البيانات بشكل دائم.</p>
+
+    <h2>ملفات تعريف الارتباط (Cookies)</h2>
+    <p>نستخدم ملفات تعريف ارتباط الجلسة (Session Cookies) لتتبع جلستك الحالية، والحفاظ على تسجيل دخولك، وحفظ تفضيلاتك (مثل الوضع الليلي والصوت). هذه الملفات مؤقتة ولا نستخدم ملفات تعريف ارتباط دائمة لتتبعك.</p>
+
+    <h2>بيانات الطرف الثالث</h2>
+    <p>قد تتم معالجة رسائلك من قبل مزودي خدمات خارجيين لتحسين تجربة الاستخدام، بما في ذلك:</p>
+    <ul>
+      <li><b>OpenAI:</b> لمعالجة المحادثات وتوليد الردود والبحث في الويب.</li>
+      <li><b>Pexels:</b> لتوفير الصور والفيديوهات المجانية عند طلبها.</li>
+      <li><b>Microsoft Edge TTS:</b> لتحويل النص إلى صوت.</li>
+    </ul>
+    <p>لا نتحكم في سياسات الخصوصية الخاصة بهم، وننصحك بمراجعتها. نحن لا نبيع بياناتك لأي طرف ثالث.</p>
+
+    <h2>الاحتفاظ بالبيانات وحقوقك</h2>
+    <ul>
+      <li><b>للضيوف:</b> لا نحتفظ بأي معلومات شخصية. يتم تخزين المحادثة مؤقتاً لمتابعة الجلسة فقط.</li>
+      <li><b>للأعضاء المسجلين:</b> نحتفظ بالبريد الإلكتروني وكلمة المرور المشفرة وسجل المحادثات طالما حسابك نشط، وذلك لتقديم الخدمة.</li>
+    </ul>
+    <p><b>حقوقك:</b></p>
+    <ul>
+      <li>يحق لك حذف جميع بياناتك ومحادثاتك وحسابك في أي وقت من داخل التطبيق بالضغط على زر "حذف حسابي" في القائمة الرئيسية.</li>
+      <li>يحق لك طلب نسخة من بياناتك أو الاعتراض على معالجتها عبر التواصل معنا.</li>
+    </ul>
+
+    <h2>الروابط الخارجية والأمان</h2>
+    <p>قد يحتوي التطبيق على روابط لمواقع خارجية. لسنا مسؤولين عن ممارسات الخصوصية الخاصة بها. نستخدم وسائل أمان معقولة (مثل تشفير كلمات المرور وبروتوكولات HTTPS) لحماية بياناتك، لكن لا توجد طريقة نقل عبر الإنترنت آمنة 100%.</p>
+
+    <h2>خصوصية الأطفال</h2>
+    <p>الخدمة غير موجهة لمن هم دون سن 16 عاماً، ولا نجمع معلوماتهم عن قصد.</p>
+
+    <h2>التغييرات على سياسة الخصوصية</h2>
+    <p>قد نقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سيتم نشر أي تغييرات على هذه الصفحة، وسيتم تحديث تاريخ "آخر تحديث" في أعلى الصفحة. يُنصح بمراجعة هذه السياسة دورياً.</p>
+
+    <h2>اتصل بنا</h2>
+    <p>لأي أسئلة حول سياسة الخصوصية:</p>
+    <ul>
+      <li>البريد الإلكتروني: <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a></li>
+      <li>الهاتف: <a href="tel:+966569361182">966569361182</a></li>
+    </ul>
+  </div>
+
+  <!-- ================= English Version ================= -->
+  <div class="en">
+    <h1>Privacy Policy</h1>
+    <p class="date">Last updated: September 15, 2026</p>
+
+    <h2>Definitions</h2>
+    <ul>
+      <li><b>Application:</b> Refers to "Nibras GP".</li>
+      <li><b>Developer:</b> Refers to Abdullah Hussein Al-Mutairi.</li>
+      <li><b>Service:</b> Refers to the Application or the Website.</li>
+    </ul>
+
+    <h2>Collection and Use of Information</h2>
+    <p>"Nibras GP" operates in two modes:</p>
+    <p><b>1. Guest Mode:</b> You can use the Service without registration. In this case, we do not collect any personal information, and your usage is limited to a daily question quota.</p>
+    <p><b>2. Registered Member Mode:</b> Registration is done via an "Invitation Code" system provided by the Developer. Upon registration, we collect and store:</p>
+    <ul>
+      <li>Email address (as your account identifier).</li>
+      <li>Password <b>hashed</b> using secure hashing algorithms (no one, including the Developer, can read it).</li>
+      <li>Your preferences (such as preferred voice gender).</li>
+      <li>Your conversation history (to continue previous conversations).</li>
+    </ul>
+    <p>We <b>do not sell</b> your data and do not share it with any third party for commercial purposes.</p>
+
+    <h2>Usage Data</h2>
+    <p>When you access the Service, we may collect your IP address and browser type for security purposes, abuse prevention, and rate limiting. This data is not stored permanently.</p>
+
+    <h2>Cookies</h2>
+    <p>We use Session Cookies to track your current session, maintain your login, and store your preferences (such as dark mode and voice). These files are temporary, and we do not use persistent cookies to track you.</p>
+
+    <h2>Third Party Data</h2>
+    <p>Your messages may be processed by third-party service providers to enhance the user experience, including:</p>
+    <ul>
+      <li><b>OpenAI:</b> For conversation processing, response generation, and web search.</li>
+      <li><b>Pexels:</b> To provide free images and videos upon request.</li>
+      <li><b>Microsoft Edge TTS:</b> For text-to-speech conversion.</li>
+    </ul>
+    <p>We do not control their privacy practices, and we advise you to review them. We do not sell your data to any third party.</p>
+
+    <h2>Data Retention and Your Rights</h2>
+    <ul>
+      <li><b>For Guests:</b> We do not retain any personal information. Conversations are stored temporarily to continue the session only.</li>
+      <li><b>For Registered Members:</b> We retain your email, hashed password, and conversation history as long as your account is active, to provide the Service.</li>
+    </ul>
+    <p><b>Your Rights:</b></p>
+    <ul>
+      <li>You have the right to delete all your data, conversations, and your account at any time from within the app by clicking the "Delete My Account" button in the main menu.</li>
+      <li>You have the right to request a copy of your data or object to its processing by contacting us.</li>
+    </ul>
+
+    <h2>External Links and Security</h2>
+    <p>The app may contain links to external websites. We are not responsible for their privacy practices. We use commercially reasonable security measures (such as password hashing and HTTPS protocols) to protect your data, but no internet transmission is 100% secure.</p>
+
+    <h2>Children's Privacy</h2>
+    <p>The Service is not directed to anyone under the age of 16, and we do not knowingly collect their information.</p>
+
+    <h2>Changes to this Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the "Last updated" date at the top will be revised. You are advised to review this Privacy Policy periodically.</p>
+
+    <h2>Contact Us</h2>
+    <p>For any questions about this Privacy Policy:</p>
+    <ul>
+      <li>Email: <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a></li>
+      <li>Phone: <a href="tel:+966569361182">966569361182</a></li>
+    </ul>
+  </div>
+
+  <footer>
+    © 2026 نبراس. جميع الحقوق محفوظة. All rights reserved.
+  </footer>
+
 </div>
 
-<div class="section">
-<h2>جمع واستخدام المعلومات</h2>
-<p>أنا لا أجمع معلومات التعريف المباشرة (الاسم الأول، اسم العائلة، البريد الإلكتروني، رقم الهاتف). أنا لا أطلب التسجيل ولا أخزن كلمات المرور.</p>
-</div>
-
-<div class="section">
-<h2>بيانات الاستخدام</h2>
-<p>عند وصولك إلى الخدمة، قد أجمع عنوان الـ IP الخاص بك ونوع المتصفح لأغراض أمنية ومنع إساءة الاستخدام. لا يتم تخزين هذه البيانات بشكل دائم.</p>
-</div>
-
-<div class="section">
-<h2>ملفات تعريف الارتباط (Cookies)</h2>
-<p>أستخدم ملفات تعريف الارتباط الخاصة بالجلسة (Session Cookies) لتتبع محادثتك الحالية. هذه الملفات مؤقتة ويتم حذفها عند إغلاق المتصفح أو بعد يوم إلى يومين. لا أستخدم ملفات تعريف الارتباط الدائمة لتعقبك.</p>
-</div>
-
-<div class="section">
-<h2>بيانات الطرف الثالث</h2>
-<p>قد تتم معالجة بياناتك ورسائلك من قبل مزودي خدمات خارجيين (مثل OpenAI لمعالجة المحادثات، و Unsplash و Pixabay لتوفير الصور والوسائط) لتحسين تجربة الاستخدام. لا نبيع بياناتك لأي طرف ثالث.</p>
-</div>
-
-<div class="section">
-<h2>الاحتفاظ بالبيانات وحقوقك</h2>
-<p>يتم تخزين بيانات المحادثة بشكل مؤقت لمساعدتك في متابعة جلستك. لا أخزن أي سجلات شخصية دائمة.
-<strong>يحق لك حذف جميع بياناتك ومحادثاتك في أي وقت من داخل التطبيق بالضغط على زر "حذف حسابي" في القائمة الرئيسية، أو عن طريق التواصل معنا عبر البريد الإلكتروني.</strong></p>
-</div>
-
-<div class="section">
-<h2>الروابط الخارجية والأمان</h2>
-<p>قد يحتوي التطبيق على روابط لمواقع خارجية. لسنا مسؤولين عن ممارسات الخصوصية الخاصة بها. نستخدم وسائل أمان معقولة لحماية بياناتك، لكن لا توجد طريقة نقل عبر الإنترنت آمنة 100%.</p>
-</div>
-
-<div class="section">
-<h2>خصوصية الأطفال</h2>
-<p>الخدمة غير موجهة لمن هم دون سن 16 عاماً، ولا أجمع معلوماتهم عن قصد.</p>
-</div>
-
-<div class="section">
-<h2>التغييرات على سياسة الخصوصية</h2>
-<p>قد أقوم بتحديث سياسة الخصوصية هذه من وقت لآخر. سيتم نشر أي تغييرات على هذه الصفحة، وسيتم تحديث تاريخ "آخر تحديث" في أعلى الصفحة. يُنصح بمراجعة هذه السياسة دورياً.</p>
-</div>
-
-<div class="section">
-<h2>اتصل بي</h2>
-<p>لأي أسئلة حول سياسة الخصوصية، يمكنك الاتصال بي عبر:<br>
-البريد الإلكتروني: <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a><br>
-الهاتف: <a href="tel:966569361182">966569361182</a></p>
-</div>
-
-<!-- الفاصل -->
-<div class="divider"></div>
-<div style="text-align: center;"><h2>English Version</h2></div>
-
-<div class="english-section">
-<h1 style="text-align: center;">Privacy Policy</h1>
-<p style="text-align: center;">Last updated: August 30, 2026</p>
-
-<div class="section">
-<h2>Definitions</h2>
-<p><strong>Application:</strong> Refers to "Nibras GP".<br>
-<strong>Developer:</strong> Refers to <strong>Abdullah Hussein Al-Mutairi</strong>.<br>
-<strong>Service:</strong> Refers to the Application or the Website.</p>
-</div>
-
-<div class="section">
-<h2>Collection and Use of Information</h2>
-<p>I do not collect direct identifiers (first name, last name, email address, phone number). I do not require registration and I do not store passwords.</p>
-</div>
-
-<div class="section">
-<h2>Usage Data</h2>
-<p>When you access the Service, I may collect your IP address and browser type for security purposes and to prevent abuse. This data is not stored permanently.</p>
-</div>
-
-<div class="section">
-<h2>Cookies</h2>
-<p>I use Session Cookies to track your current conversation. These files are temporary and are deleted when you close your browser or after 1-2 days. I do not use persistent cookies to track you.</p>
-</div>
-
-<div class="section">
-<h2>Third Party Data</h2>
-<p>Your messages and data may be processed by third-party service providers (such as OpenAI for conversation processing, and Unsplash and Pixabay for images and media) to enhance the user experience. We do not sell your data to any third party.</p>
-</div>
-
-<div class="section">
-<h2>Data Retention and Your Rights</h2>
-<p>Conversation data is stored temporarily to help you continue your session. I do not store any permanent personal records.
-<strong>You have the right to delete all your data and conversations at any time from within the app by clicking the "Delete My Account" button in the main menu, or by contacting us via the email listed below.</strong></p>
-</div>
-
-<div class="section">
-<h2>External Links and Security</h2>
-<p>The app may contain links to external websites. We are not responsible for their privacy practices. We use commercially reasonable security measures, but no internet transmission is 100% secure.</p>
-</div>
-
-<div class="section">
-<h2>Children's Privacy</h2>
-<p>The Service is not directed to anyone under the age of 16, and I do not knowingly collect their information.</p>
-</div>
-
-<div class="section">
-<h2>Changes to this Privacy Policy</h2>
-<p>I may update this Privacy Policy from time to time. Any changes will be posted on this page, and the "Last updated" date at the top will be revised. You are advised to review this Privacy Policy periodically.</p>
-</div>
-
-<div class="section">
-<h2>Contact Me</h2>
-<p>For any questions about this Privacy Policy, you can contact me via:<br>
-Email: <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a><br>
-Phone: <a href="tel:966569361182">966569361182</a></p>
-</div>
-
-<div class="footer">
-<p>&copy; 2026 نبراس. جميع الحقوق محفوظة. All rights reserved.</p>
-</div>
+<script>
+  function showLang(lang) {
+    const ar = document.querySelector('.ar');
+    const en = document.querySelector('.en');
+    if (lang === 'ar') {
+      ar.style.display = 'block';
+      en.style.display = 'none';
+      document.documentElement.dir = 'rtl';
+      document.documentElement.lang = 'ar';
+    } else {
+      ar.style.display = 'none';
+      en.style.display = 'block';
+      document.documentElement.dir = 'ltr';
+      document.documentElement.lang = 'en';
+    }
+  }
+</script>
 
 </body>
 </html>
