@@ -39,13 +39,22 @@
     margin-bottom: 15px;
     text-align: justify;
   }
+  .warn {
+    background: #fde8e8;
+    border-right: 4px solid #d9534f;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #8a1c1c;
+  }
   label {
     display: block;
     font-weight: bold;
     margin-bottom: 8px;
     color: #3a5570;
   }
-  input[type="email"] {
+  input[type="email"], input[type="password"] {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #d1d9e0;
@@ -54,22 +63,24 @@
     margin-bottom: 20px;
     transition: border 0.3s;
   }
-  input[type="email"]:focus {
+  input[type="email"]:focus, input[type="password"]:focus {
     outline: none;
     border-color: #4a6b8a;
   }
   button {
     width: 100%;
     padding: 14px;
-    background: #4a6b8a;
+    background: #d9534f;
     color: #fff;
     border: none;
     border-radius: 25px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
   }
-  button:hover { background: #3a5570; }
+  button:hover { background: #c9302c; }
+  button:disabled { background: #aaa; cursor: not-allowed; }
   .note {
     background: #fff8e1;
     border-right: 4px solid #ffc107;
@@ -78,6 +89,15 @@
     font-size: 14px;
     margin-top: 20px;
     color: #6d5a00;
+  }
+  .error {
+    background: #fde8e8;
+    border-right: 4px solid #d9534f;
+    padding: 15px;
+    border-radius: 8px;
+    color: #8a1c1c;
+    font-size: 14px;
+    margin-top: 20px;
   }
   .footer {
     text-align: center;
@@ -91,53 +111,102 @@
   .success {
     background: #e8f5e9;
     border-right: 4px solid #4caf50;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     color: #2e7d32;
     font-size: 15px;
     margin-top: 20px;
+    text-align: center;
+    line-height: 1.8;
   }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>حذف الحساب</h1>
-  <p>إذا كنت ترغب في حذف حسابك في تطبيق <strong>"نبراس GP"</strong> وجميع بياناتك، يرجى إدخال بريدك الإلكتروني أدناه، وسيتم حذف حسابك خلال مدة أقصاها 30 يومًا من تاريخ الطلب.</p>
+  <h1>🗑️ حذف الحساب</h1>
 
-  <form id="deleteForm">
-    <label for="email">البريد الإلكتروني المسجل:</label>
-    <input type="email" id="email" placeholder="example@email.com" required>
-    <button type="submit">طلب حذف الحساب</button>
-  </form>
+  <div id="intro">
+    <div class="warn">
+      <strong>⚠️ تحذير:</strong> هذا الإجراء نهائي ولا يمكن التراجع عنه. سيتم حذف جميع بياناتك ومحادثاتك نهائياً.
+    </div>
+
+    <p>لحذف حسابك في تطبيق <strong>"نبراس GP"</strong>، أدخل <strong>البريد الإلكتروني</strong> و<strong>كلمة المرور</strong> المسجلة. سيتم تنفيذ الحذف خلال مدة أقصاها <strong>30 يومًا</strong> من تاريخ الطلب.</p>
+
+    <form id="deleteForm">
+      <label for="email">البريد الإلكتروني المسجل:</label>
+      <input type="email" id="email" placeholder="example@email.com" required autocomplete="email">
+
+      <label for="password">كلمة المرور:</label>
+      <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
+
+      <button type="submit" id="submitBtn">تأكيد طلب حذف الحساب</button>
+    </form>
+  </div>
 
   <div id="successMessage" class="success hidden">
-    ✅ تم استلام طلبك بنجاح. سيتم حذف حسابك خلال 30 يومًا كحد أقصى.
+    ✅ <strong>تم استلام طلبك بنجاح</strong><br>
+    سيتم حذف حسابك خلال 30 يومًا كحد أقصى.<br>
+    شكراً لاستخدامك نبراس.
   </div>
+
+  <div id="errorMessage" class="error hidden"></div>
 
   <div class="note">
-    <strong>ملاحظة:</strong> يمكنك أيضًا حذف حسابك مباشرة من داخل التطبيق عبر القائمة المنسدلة → "حذف حسابي".
+    <strong>ملاحظة:</strong> يمكنك أيضًا حذف حسابك مباشرة من داخل التطبيق عبر القائمة المنسدلة → "حذف حسابي". هذا الإجراء فوري ولا يحتاج انتظار.
   </div>
 
-  <p class="footer">© 2026 نبراس GP. جميع الحقوق محفوظة.</p>
+  <p class="footer">© 2026 نبراس GP. جميع الحقوق محفوظة.<br>
+  <a href="https://abod724.github.io/nibras-privacy/" style="color:#4a6a8a;text-decoration:none;">سياسة الخصوصية</a></p>
 </div>
 
 <script>
 document.getElementById('deleteForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  const email = document.getElementById('email').value;
 
-  if (!email) return;
+  var email = document.getElementById('email').value.trim();
+  var password = document.getElementById('password').value;
+  var btn = document.getElementById('submitBtn');
+  var errBox = document.getElementById('errorMessage');
 
-  // هنا يمكنك ربط النموذج بخدمة مثل Formspree أو Google Forms
-  // أو ببساطة إرسال بريد إلكتروني لك يدويًا.
+  if (!email || email.indexOf('@') < 0) {
+    errBox.textContent = 'الرجاء إدخال بريد إلكتروني صحيح.';
+    errBox.classList.remove('hidden');
+    return;
+  }
+  if (!password) {
+    errBox.textContent = 'الرجاء إدخال كلمة المرور.';
+    errBox.classList.remove('hidden');
+    return;
+  }
 
-  // لأغراض العرض، نُظهر رسالة نجاح:
-  document.getElementById('deleteForm').classList.add('hidden');
-  document.getElementById('successMessage').classList.remove('hidden');
+  btn.disabled = true;
+  btn.textContent = 'جاري التحقق...';
+  errBox.classList.add('hidden');
 
-  // يمكنك إضافة كود لإرسال البريد إلى nibrasalsd@gmail.com
-  // مثلاً باستخدام mailto أو API خارجي.
+  fetch('https://nibras-al.onrender.com/request-deletion', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, password: password })
+  })
+  .then(function(r) { return r.json(); })
+  .then(function(data) {
+    if (data.status === 'ok') {
+      document.getElementById('intro').classList.add('hidden');
+      document.getElementById('successMessage').classList.remove('hidden');
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'تأكيد طلب حذف الحساب';
+      errBox.textContent = '❌ ' + (data.message || 'فشل الطلب');
+      errBox.classList.remove('hidden');
+    }
+  })
+  .catch(function() {
+    btn.disabled = false;
+    btn.textContent = 'تأكيد طلب حذف الحساب';
+    errBox.textContent = '❌ تعذر الاتصال بالسيرفر. حاول مرة أخرى.';
+    errBox.classList.remove('hidden');
+  });
 });
 </script>
 
