@@ -5,148 +5,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>سياسة الخصوصية - نبراس GP</title>
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-    background: #f4f5f7;
-    color: #333;
-    line-height: 1.8;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f4f7fc;
+    color: #1a2b3c;
+    line-height: 1.9;
     padding: 20px;
-    min-height: 100vh;
   }
   .container {
-    max-width: 850px;
+    max-width: 800px;
     margin: 0 auto;
     background: #fff;
-    border-radius: 18px;
     padding: 40px 30px;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
   }
-  .lang-switch {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-bottom: 30px;
-  }
-  .lang-btn {
-    padding: 10px 28px;
-    border: none;
-    border-radius: 25px;
-    background: #4a6b8a;
-    color: #fff;
-    font-size: 15px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  .lang-btn:hover { background: #3a5570; }
-  .lang-btn.active { background: #2c4258; }
   h1 {
-    color: #3a5570;
-    text-align: center;
-    font-size: 26px;
-    margin-bottom: 15px;
+    color: #4a6a8a;
+    border-bottom: 2px solid #eaeef2;
     padding-bottom: 15px;
-    border-bottom: 2px solid #e8ecf1;
-  }
-  .updated {
-    text-align: center;
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    font-size: 26px;
   }
   h2 {
-    color: #3a5570;
+    color: #4a6a8a;
+    margin-top: 30px;
+    margin-bottom: 12px;
     font-size: 20px;
-    margin: 30px 0 15px;
+    border-right: 4px solid #4a6a8a;
     padding-right: 12px;
-    border-right: 4px solid #4a6b8a;
-  }
-  html[dir="ltr"] h2 {
-    padding-right: 0;
-    padding-left: 12px;
-    border-right: none;
-    border-left: 4px solid #4a6b8a;
   }
   h3 {
-    color: #4a6b8a;
+    color: #3a5a7a;
+    margin-top: 20px;
+    margin-bottom: 10px;
     font-size: 17px;
-    margin: 20px 0 10px;
+  }
+  .date {
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 25px;
   }
   p, li {
-    font-size: 15.5px;
-    color: #444;
     margin-bottom: 12px;
-    text-align: justify;
+    font-size: 16px;
   }
-  ul, ol {
-    padding-right: 25px;
-    margin-bottom: 15px;
+  ul { padding-right: 25px; }
+  a { color: #4a6a8a; }
+  .lang-switch {
+    text-align: center;
+    margin-bottom: 30px;
   }
-  html[dir="ltr"] ul,
-  html[dir="ltr"] ol {
-    padding-right: 0;
-    padding-left: 25px;
-  }
-  li { margin-bottom: 8px; }
-  .contact-info {
-    background: #f8fafc;
-    border-radius: 12px;
-    padding: 20px;
-    margin-top: 15px;
-    border: 1px solid #e8ecf1;
-  }
-  .contact-info p {
-    margin-bottom: 8px;
+  .lang-switch button {
+    background: #4a6a8a;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 5px;
     font-size: 15px;
   }
-  .delete-link {
-    display: inline-block;
-    background: #4a6b8a;
-    color: #fff !important;
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 10px 0;
-    transition: background 0.3s;
+  .lang-switch button:hover { background: #3a5a7a; }
+  .en { display: none; direction: ltr; text-align: left; }
+  .en h1 { border-bottom: 2px solid #eaeef2; }
+  .en h2 { border-right: none; border-left: 4px solid #4a6a8a; padding-right: 0; padding-left: 12px; }
+  .en ul { padding-right: 0; padding-left: 25px; }
+  .highlight {
+    background: #fff8e1;
+    border-right: 4px solid #ffc107;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-size: 15px;
   }
-  .delete-link:hover {
-    background: #2c4258;
-    text-decoration: none !important;
+  .en .highlight {
+    border-right: none;
+    border-left: 4px solid #ffc107;
   }
-  a { color: #4a6b8a; text-decoration: none; }
-  a:hover { text-decoration: underline; }
-  .footer {
+  footer {
     text-align: center;
-    color: #888;
-    font-size: 13.5px;
+    color: #8b949e;
+    font-size: 14px;
     margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #e8ecf1;
+    border-top: 1px solid #eaeef2;
   }
-  .hidden { display: none; }
-  @media (max-width: 600px) {
-    .container { padding: 25px 18px; border-radius: 12px; }
-    h1 { font-size: 21px; }
-    h2 { font-size: 17px; }
-    p, li { font-size: 14.5px; }
-    body { padding: 10px; }
+  @media (max-width: 500px) {
+    .container { padding: 20px 15px; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
   }
 </style>
 </head>
 <body>
-
 <div class="container">
 
   <div class="lang-switch">
-    <button class="lang-btn active" onclick="setLang('ar')">🇸🇦 العربية</button>
-    <button class="lang-btn" onclick="setLang('en')">🇬🇧 English</button>
+    <button onclick="showLang('ar')">🇸🇦 العربية</button>
+    <button onclick="showLang('en')">🇬🇧 English</button>
   </div>
 
-  <!-- ============ النسخة العربية ============ -->
-  <div id="ar-content">
+  <!-- ================= النسخة العربية ================= -->
+  <div class="ar">
     <h1>سياسة الخصوصية</h1>
-    <p class="updated">آخر تحديث: 16 سبتمبر 2026</p>
+    <p class="date">آخر تحديث: 16 سبتمبر 2026</p>
 
     <p>مرحبًا بك في تطبيق <strong>"نبراس GP"</strong>. نحن نأخذ خصوصيتك على محمل الجد. توضح سياسة الخصوصية هذه كيفية جمع بياناتك واستخدامها وحمايتها عند استخدامك لتطبيقنا أو موقعنا الإلكتروني. باستخدامك للخدمة، فإنك توافق على الممارسات الموضحة في هذه السياسة.</p>
 
@@ -156,64 +120,98 @@
       <li><strong>المطور:</strong> يشير إلى عبدالله حسين المطيري.</li>
       <li><strong>الخدمة:</strong> تشير إلى التطبيق أو الموقع الإلكتروني.</li>
       <li><strong>المستخدم:</strong> يشير إلى أي شخص يستخدم الخدمة (ضيف أو عضو مسجل).</li>
+      <li><strong>الضيف:</strong> مستخدم يستخدم الخدمة دون تسجيل دخول.</li>
+      <li><strong>العضو المسجل:</strong> مستخدم سجّل دخوله عبر كود دعوة مخصص.</li>
+      <li><strong>كود الدعوة:</strong> كود مشفّر (HMAC) يمنحه المطور لمستخدم بعينه لتفعيل حسابه لمدة محددة.</li>
     </ul>
 
     <h2>2. جمع واستخدام المعلومات</h2>
-    <p>يعمل نظام "نبراس GP" بنظامين:</p>
 
     <h3>أ. الاستخدام كضيف</h3>
-    <p>يمكنك استخدام الخدمة دون تسجيل. في هذه الحالة، لا نجمع أي معلومات شخصية تحدد هويتك. يكون استخدامك محدودًا بعدد أسئلة يومي. يتم تخزين سجل المحادثة مؤقتًا في جلسة الاستخدام فقط ولا يتم الاحتفاظ به بشكل دائم.</p>
+    <p>يمكنك استخدام الخدمة دون تسجيل. في هذه الحالة:</p>
+    <ul>
+      <li>لا نجمع أي معلومات شخصية تحدد هويتك (لا اسم، لا إيميل، لا هاتف).</li>
+      <li>يُمنح لك معرّف جلسة مؤقت (Session ID) عشوائي لتتبع استخدامك خلال الزيارة.</li>
+      <li>استخدامك محدود بـ <strong>15 سؤالاً يوميًا</strong>، يُسجَّل عددها وتاريخها فقط.</li>
+      <li>لا يتم حفظ محادثاتك بشكل دائم.</li>
+    </ul>
 
     <h3>ب. الاستخدام كعضو مسجل</h3>
     <p>يتم التسجيل عبر نظام "كود الدعوة" الذي يمنحه لك المطور. عند التسجيل، نجمع ونخزن البيانات التالية لتقديم الخدمة:</p>
     <ul>
-      <li><strong>البريد الإلكتروني:</strong> لتعريف حسابك والتواصل معك.</li>
-      <li><strong>كلمة المرور:</strong> تُخزن مشفرة بالكامل باستخدام خوارزميات تشفير آمنة. لا يمكن لأي شخص، بما في ذلك المطور، قراءتها.</li>
-      <li><strong>إعداداتك:</strong> مثل جنس الصوت المفضل والوضع الليلي.</li>
+      <li><strong>البريد الإلكتروني:</strong> لتعريف حسابك وتفعيل كود الدعوة المخصص لك.</li>
+      <li><strong>كلمة المرور:</strong> تُخزَّن مشفّرة بالكامل باستخدام خوارزميات تشفير آمنة (Werkzeug Password Hashing). لا يمكن لأي شخص، بما في ذلك المطور، قراءتها.</li>
+      <li><strong>تاريخ انتهاء كود الوصول:</strong> لمعرفة متى ينتهي اشتراكك.</li>
+      <li><strong>إعداداتك:</strong> مثل جنس الصوت المفضل (ذكر/أنثى).</li>
       <li><strong>سجل المحادثات:</strong> لحفظ محادثاتك السابقة وتقديم تجربة متسقة.</li>
     </ul>
 
     <h3>ج. محتوى المستخدم (نصوص وصور)</h3>
     <ul>
-      <li><strong>النصوص (الأسئلة والاستفسارات):</strong> تُعالج لحظيًا لتوليد الردود. لا يتم تخزينها بشكل دائم إلا إذا كنت عضوًا مسجلًا واخترت حفظ المحادثة.</li>
-      <li><strong>الصور (للتحليل):</strong> عند رفعك لصورة لتحليلها، يتم إرسالها إلى مزود خدمة الذكاء الاصطناعي (OpenAI) لمعالجتها. لا يتم تخزين الصور في خوادمنا، وتُعالج فقط لغرض تلبية طلبك.</li>
+      <li><strong>النصوص (الأسئلة والاستفسارات):</strong> تُعالج لحظياً لتوليد الردود، وتُرسل إلى مزود خدمة الذكاء الاصطناعي. يتم تخزينها في قاعدة بياناتنا فقط إذا كنت عضوًا مسجلًا (لحفظ سجل المحادثات).</li>
+      <li><strong>الصور (للتحليل):</strong> عند رفعك صورة لتحليلها، تُرسل إلى مزود خدمة الذكاء الاصطناعي (OpenAI) لمعالجتها لحظياً. لا يتم تخزين الصور في خوادمنا إطلاقاً.</li>
+      <li><strong>طلبات الرسم/الفيديو:</strong> عند طلبك صورة أو فيديو، يُرسل وصف طلبك إلى خدمة Pexels للبحث عن الوسائط المناسبة.</li>
     </ul>
 
     <h3>د. بيانات الاستخدام التلقائية</h3>
-    <p>عند وصولك إلى الخدمة، قد نجمع عنوان IP الخاص بك ونوع المتصفح والجهاز لأغراض أمنية بحتة (منع إساءة الاستخدام والحد من الطلبات المتكررة). يتم الاحتفاظ بهذه البيانات لمدة أقصاها 7 أيام، ثم تُحذف تلقائيًا.</p>
+    <p>عند وصولك إلى الخدمة، قد نستخدم عنوان IP الخاص بك ونوع المتصفح بشكل <strong>لحظي فقط</strong> لأغراض أمنية بحتة (منع إساءة الاستخدام والحد من الطلبات المتكررة). <strong>لا يتم تخزين هذه البيانات بشكل دائم</strong>، بل تُحفظ في الذاكرة المؤقتة للسيرفر فقط وتضيع عند إعادة تشغيله.</p>
 
     <h2>3. مزودو الخدمة (أطراف ثالثة)</h2>
-    <p>نحن لا نبيع بياناتك الشخصية ولا نشاركها مع أي طرف ثالث لأغراض تجارية أو تسويقية. نستخدم مزودي خدمات خارجيين لتشغيل ميزات التطبيق، وقد تتم معالجة بياناتك من قبلهم وفقًا لسياسات الخصوصية الخاصة بهم:</p>
+    <p>نحن <strong>لا نبيع</strong> بياناتك الشخصية ولا نشاركها مع أي طرف ثالث لأغراض تجارية أو تسويقية. نستخدم مزودي خدمات خارجيين لتشغيل ميزات التطبيق، وقد تتم معالجة بياناتك من قبلهم وفقًا لسياسات الخصوصية الخاصة بهم:</p>
     <ul>
       <li><strong>OpenAI:</strong> لمعالجة المحادثات، توليد الردود، البحث في الويب، وتحليل الصور. (<a href="https://openai.com/privacy" target="_blank">سياسة الخصوصية</a>)</li>
-      <li><strong>Pexels:</strong> لتوفير الصور والفيديوهات المجانية عند طلبها. (<a href="https://www.pexels.com/privacy-policy" target="_blank">سياسة الخصوصية</a>)</li>
-      <li><strong>Microsoft Edge TTS:</strong> لتحويل النص إلى صوت. (<a href="https://privacy.microsoft.com" target="_blank">سياسة الخصوصية</a>)</li>
+      <li><strong>Pexels:</strong> لتوفير الصور والفيديوهات المجانية عند طلبها. (<a href="https://www.pexels.com/privacy-policy/" target="_blank">سياسة الخصوصية</a>)</li>
+      <li><strong>Microsoft Edge TTS:</strong> لتحويل النص إلى صوت (صوت المساعد). (<a href="https://privacy.microsoft.com/" target="_blank">سياسة الخصوصية</a>)</li>
     </ul>
     <p><strong>نقل البيانات دوليًا:</strong> قد يتم نقل بياناتك ومعالجتها في دول خارج بلد إقامتك، بما في ذلك الولايات المتحدة، من قبل مزودي الخدمة المذكورين. نحن نضمن أن هؤلاء المزودين يلتزمون بمعايير حماية البيانات المعمول بها.</p>
 
     <h2>4. ملفات تعريف الارتباط ورموز الجلسة</h2>
-    <p>لا نستخدم ملفات تعريف الارتباط (Cookies) التقليدية. بدلاً من ذلك، نستخدم رموز جلسة (Session Tokens) وتخزينًا محليًا (Local Storage) لتتبع جلستك الحالية، الحفاظ على تسجيل دخولك، وحفظ تفضيلاتك. هذه البيانات مؤقتة ولا نستخدمها لتتبعك عبر مواقع أخرى.</p>
-
-    <h2>5. الاحتفاظ بالبيانات وحذف الحساب</h2>
     <ul>
-      <li><strong>للضيوف:</strong> لا نحتفظ بأي معلومات شخصية.</li>
-      <li><strong>للأعضاء المسجلين:</strong> نحتفظ ببياناتك (البريد، كلمة المرور المشفرة، سجل المحادثات) طالما حسابك نشط.</li>
-    </ul>
-    <p><strong>حقوقك في حذف البيانات:</strong> يحق لك حذف جميع بياناتك ومحادثاتك وحسابك في أي وقت.</p>
-    <ul>
-      <li><strong>من داخل التطبيق:</strong> يمكنك الضغط على زر "حذف حسابي" في القائمة المنسدلة الرئيسية.</li>
-      <li><strong>عبر الويب:</strong> يمكنك أيضًا طلب حذف حسابك من خلال الرابط التالي:</li>
+      <li><strong>رموز الجلسة (Session Cookies):</strong> نستخدمها للحفاظ على تسجيل دخولك. هذه الرموز مؤقتة، <strong>HttpOnly</strong> (لا يمكن قراءتها بواسطة JavaScript)، و<strong>Secure</strong> (تُرسل فقط عبر HTTPS)، وتنتهي صلاحيتها بعد <strong>30 يوماً</strong>.</li>
+      <li><strong>التخزين المحلي (Local Storage):</strong> نستخدمه لحفظ تفضيلاتك مثل الوضع الليلي/النهاري على جهازك فقط. لا يُرسل إلى السيرفر.</li>
+      <li><strong>لا نستخدم</strong> أي ملفات تعريف ارتباط دائمة لتتبعك عبر مواقع أخرى، ولا أدوات تحليل إعلانية (مثل Google Analytics أو Facebook Pixel).</li>
     </ul>
 
-    <p style="text-align: center;">
-      <a href="https://abod724.github.io/nibras-privacy/delete-account.html" class="delete-link">🗑️ صفحة حذف الحساب</a>
-    </p>
+    <h2>5. أمان البيانات</h2>
+    <p>نستخدم وسائل أمان متقدمة لحماية بياناتك:</p>
+    <ul>
+      <li><strong>تشفير كلمات المرور:</strong> باستخدام خوارزميات تشفير قوية (Werkzeug).</li>
+      <li><strong>أكواد دعوة موقّعة:</strong> باستخدام HMAC-SHA256، مما يمنع تزويرها أو استخدامها من قِبل غير المصرح لهم.</li>
+      <li><strong>بروتوكول HTTPS:</strong> جميع الاتصالات بينك وبين السيرفر مشفّرة.</li>
+      <li><strong>تحديد معدل الطلبات (Rate Limiting):</strong> لحماية الخدمة من إساءة الاستخدام.</li>
+      <li><strong>سياسات CORS محدودة:</strong> لضمان أن الطلبات تأتي من مصادر موثوقة فقط.</li>
+    </ul>
+    <p>ومع ذلك، لا توجد طريقة نقل عبر الإنترنت آمنة بنسبة 100%، ولا يمكننا ضمان الأمان المطلق.</p>
 
-    <p><strong>مدة الحذف:</strong> عند طلب حذف الحساب، يتم حذف جميع بياناتك ومحادثاتك بشكل نهائي خلال مدة أقصاها 30 يومًا من تاريخ الطلب.</p>
-    <p>يحق لك أيضًا طلب نسخة من بياناتك أو الاعتراض على معالجتها عبر التواصل معنا.</p>
+    <h2>6. الاحتفاظ بالبيانات وحذف الحساب</h2>
 
-    <h2>6. أمان البيانات</h2>
-    <p>نستخدم وسائل أمان معقولة ومتقدمة (مثل تشفير كلمات المرور، بروتوكولات HTTPS، وتقييد الوصول للبيانات) لحماية بياناتك. ومع ذلك، لا توجد طريقة نقل عبر الإنترنت آمنة بنسبة 100%، ولا يمكننا ضمان الأمان المطلق.</p>
+    <h3>مدة الاحتفاظ</h3>
+    <ul>
+      <li><strong>للضيوف:</strong> لا نحتفظ بأي معلومات شخصية. فقط عدد الأسئلة اليومية (يُصفَّر يومياً).</li>
+      <li><strong>للأعضاء المسجلين:</strong> نحتفظ ببياناتك (البريد الإلكتروني، كلمة المرور المشفرة، سجل المحادثات) طالما حسابك نشط ولم ينتهِ كود الوصول الخاص بك.</li>
+      <li><strong>لطلبات الحذف:</strong> نحتفظ بسجل طلب الحذف حتى معالجته، ثم يُحذف.</li>
+    </ul>
+
+    <h3>حقوقك في حذف البيانات</h3>
+    <p>يحق لك حذف جميع بياناتك ومحادثاتك وحسابك في أي وقت:</p>
+    <ul>
+      <li><strong>من داخل التطبيق:</strong> يمكنك الضغط على "حذف حسابي" في القائمة المنسدلة الرئيسية. <strong>هذا الإجراء فوري</strong> ويحذف جميع بياناتك مباشرة.</li>
+      <li><strong>عبر الويب:</strong> يمكنك طلب حذف حسابك من خلال الرابط التالي، مع إدخال بريدك الإلكتروني وكلمة المرور للتحقق من هويتك:</li>
+    </ul>
+    <div class="highlight">
+      🗑️ <strong>صفحة حذف الحساب:</strong><br>
+      <a href="https://abod724.github.io/nibras-privacy/delete-account.html">https://abod724.github.io/nibras-privacy/delete-account.html</a><br>
+      <small>ملاحظة: يتم تنفيذ الطلبات المقدمة عبر الويب خلال مدة أقصاها 30 يوماً من تاريخ الطلب.</small>
+    </div>
+    <p>يحق لك أيضًا طلب نسخة من بياناتك أو الاعتراض على معالجتها عبر التواصل معنا عبر البريد الإلكتروني.</p>
+
+    <h3>ما الذي يتم حذفه؟</h3>
+    <ul>
+      <li>البريد الإلكتروني وكلمة المرور المشفرة.</li>
+      <li>جميع محادثاتك السابقة.</li>
+      <li>إعداداتك وتفضيلاتك.</li>
+      <li>كود الوصول المخصص لك.</li>
+    </ul>
 
     <h2>7. خصوصية الأطفال</h2>
     <p>الخدمة غير موجهة لمن هم دون سن 16 عامًا، ولا نجمع معلوماتهم عن قصد. إذا اكتشفنا أننا جمعنا بيانات من طفل دون 16 عامًا، سنحذفها فورًا.</p>
@@ -223,126 +221,154 @@
 
     <h2>9. اتصل بنا</h2>
     <p>لأي أسئلة أو استفسارات حول سياسة الخصوصية، يمكنك التواصل معنا عبر:</p>
-    <div class="contact-info">
-      <p>📧 <strong>البريد الإلكتروني:</strong> <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a></p>
-      <p>📱 <strong>الهاتف:</strong> <a href="tel:+966569361182">+966 56 936 1182</a></p>
-    </div>
-
-    <p class="footer">© 2026 نبراس GP. جميع الحقوق محفوظة.</p>
+    <ul>
+      <li>📧 البريد الإلكتروني: <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a></li>
+      <li>📱 الهاتف: <a href="tel:+966569361182">+966 56 936 1182</a></li>
+    </ul>
   </div>
 
-  <!-- ============ English Version ============ -->
-  <div id="en-content" class="hidden">
+  <!-- ================= English Version ================= -->
+  <div class="en">
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: September 16, 2026</p>
+    <p class="date">Last updated: September 16, 2026</p>
 
-    <p>Welcome to <strong>"Nibras GP"</strong>. We take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your data when you use our application or website. By using the Service, you agree to the practices described in this policy.</p>
+    <p>Welcome to the <strong>"Nibras GP"</strong> application. We take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your data when you use our application or website. By using the Service, you agree to the practices described in this policy.</p>
 
     <h2>1. Definitions</h2>
     <ul>
-      <li><strong>App:</strong> Refers to "Nibras GP".</li>
+      <li><strong>Application:</strong> Refers to "Nibras GP".</li>
       <li><strong>Developer:</strong> Refers to Abdullah Hussein Al-Mutairi.</li>
-      <li><strong>Service:</strong> Refers to the application or website.</li>
-      <li><strong>User:</strong> Refers to anyone using the Service (guest or registered member).</li>
+      <li><strong>Service:</strong> Refers to the Application or the Website.</li>
+      <li><strong>User:</strong> Refers to anyone using the Service (Guest or Registered Member).</li>
+      <li><strong>Guest:</strong> A user who uses the Service without logging in.</li>
+      <li><strong>Registered Member:</strong> A user who logged in via a dedicated invitation code.</li>
+      <li><strong>Invitation Code:</strong> A cryptographically signed code (HMAC) granted by the Developer to a specific user to activate their account for a limited period.</li>
     </ul>
 
-    <h2>2. Information Collection and Use</h2>
-    <p>The "Nibras GP" system operates in two modes:</p>
+    <h2>2. Collection and Use of Information</h2>
 
     <h3>A. Guest Mode</h3>
-    <p>You can use the Service without registration. In this case, we do not collect any personally identifiable information. Your usage is limited to a daily number of questions. Chat history is temporarily stored during the session only and is not permanently retained.</p>
-
-    <h3>B. Registered Member</h3>
-    <p>Registration is done through an "invitation code" system granted by the Developer. Upon registration, we collect and store the following data to provide the Service:</p>
+    <p>You can use the Service without registration. In this case:</p>
     <ul>
-      <li><strong>Email address:</strong> To identify your account and communicate with you.</li>
-      <li><strong>Password:</strong> Fully encrypted using secure encryption algorithms. No one, including the Developer, can read it.</li>
-      <li><strong>Your settings:</strong> Such as preferred voice gender and dark mode.</li>
-      <li><strong>Chat history:</strong> To save your previous conversations and provide a consistent experience.</li>
+      <li>We do not collect any personal information that identifies you (no name, email, or phone).</li>
+      <li>You are given a temporary random Session ID to track your usage during your visit.</li>
+      <li>Your usage is limited to <strong>15 questions per day</strong>; only the count and date are recorded.</li>
+      <li>Your conversations are not permanently stored.</li>
+    </ul>
+
+    <h3>B. Registered Member Mode</h3>
+    <p>Registration is done via an "Invitation Code" system provided by the Developer. Upon registration, we collect and store the following data to provide the Service:</p>
+    <ul>
+      <li><strong>Email address:</strong> To identify your account and activate your dedicated invitation code.</li>
+      <li><strong>Password:</strong> Stored fully hashed using secure hashing algorithms (Werkzeug Password Hashing). No one, including the Developer, can read it.</li>
+      <li><strong>Access code expiry date:</strong> To know when your access period ends.</li>
+      <li><strong>Your preferences:</strong> Such as preferred voice gender (male/female).</li>
+      <li><strong>Conversation history:</strong> To save your previous conversations and provide a consistent experience.</li>
     </ul>
 
     <h3>C. User Content (Text and Images)</h3>
     <ul>
-      <li><strong>Text (questions and queries):</strong> Processed in real time to generate responses. It is not permanently stored unless you are a registered member and choose to save the conversation.</li>
-      <li><strong>Images (for analysis):</strong> When you upload an image for analysis, it is sent to our AI service provider (OpenAI) for processing. Images are not stored on our servers and are processed only to fulfill your request.</li>
+      <li><strong>Text (questions and inquiries):</strong> Processed in real-time to generate responses, and sent to a third-party AI provider. Stored in our database only if you are a registered member (to save conversation history).</li>
+      <li><strong>Images (for analysis):</strong> When you upload an image for analysis, it is sent to a third-party AI provider (OpenAI) for real-time processing. Images are never stored on our servers.</li>
+      <li><strong>Image/Video Requests:</strong> When you request an image or video, your request description is sent to Pexels to search for appropriate media.</li>
     </ul>
 
     <h3>D. Automatic Usage Data</h3>
-    <p>When you access the Service, we may collect your IP address, browser type, and device type for security purposes only (preventing abuse and limiting repeated requests). This data is retained for a maximum of 7 days, then automatically deleted.</p>
+    <p>When you access the Service, we may use your IP address and browser type <strong>in real-time only</strong> for security purposes (abuse prevention and rate limiting). <strong>This data is not stored permanently</strong>; it is kept only in the server's temporary memory and is lost when the server restarts.</p>
 
-    <h2>3. Service Providers (Third Parties)</h2>
-    <p>We do not sell your personal data or share it with any third party for commercial or marketing purposes. We use external service providers to operate app features, and your data may be processed by them according to their privacy policies:</p>
+    <h2>3. Third-Party Service Providers</h2>
+    <p>We <strong>do not sell</strong> your personal data and do not share it with any third party for commercial or marketing purposes. We use external service providers to operate the Application's features, and your data may be processed by them in accordance with their own privacy policies:</p>
     <ul>
-      <li><strong>OpenAI:</strong> For chat processing, response generation, web search, and image analysis. (<a href="https://openai.com/privacy" target="_blank">Privacy Policy</a>)</li>
-      <li><strong>Pexels:</strong> For providing free images and videos when requested. (<a href="https://www.pexels.com/privacy-policy" target="_blank">Privacy Policy</a>)</li>
-      <li><strong>Microsoft Edge TTS:</strong> For text-to-speech conversion. (<a href="https://privacy.microsoft.com" target="_blank">Privacy Policy</a>)</li>
+      <li><strong>OpenAI:</strong> For processing conversations, generating responses, web search, and image analysis. (<a href="https://openai.com/privacy" target="_blank">Privacy Policy</a>)</li>
+      <li><strong>Pexels:</strong> To provide free images and videos upon request. (<a href="https://www.pexels.com/privacy-policy/" target="_blank">Privacy Policy</a>)</li>
+      <li><strong>Microsoft Edge TTS:</strong> For text-to-speech conversion (assistant voice). (<a href="https://privacy.microsoft.com/" target="_blank">Privacy Policy</a>)</li>
     </ul>
-    <p><strong>International Data Transfer:</strong> Your data may be transferred to and processed in countries outside your country of residence, including the United States, by the mentioned service providers. We ensure these providers comply with applicable data protection standards.</p>
+    <p><strong>International Data Transfers:</strong> Your data may be transferred and processed in countries outside your country of residence, including the United States, by the aforementioned service providers. We ensure that these providers comply with applicable data protection standards.</p>
 
     <h2>4. Cookies and Session Tokens</h2>
-    <p>We do not use traditional cookies. Instead, we use Session Tokens and Local Storage to track your current session, maintain your login, and save your preferences. This data is temporary and is not used to track you across other websites.</p>
-
-    <h2>5. Data Retention and Account Deletion</h2>
     <ul>
-      <li><strong>For Guests:</strong> We do not retain any personal information.</li>
-      <li><strong>For Registered Members:</strong> We retain your data (email, encrypted password, chat history) as long as your account is active.</li>
-    </ul>
-    <p><strong>Your Rights to Data Deletion:</strong> You have the right to delete all your data, chats, and account at any time.</p>
-    <ul>
-      <li><strong>From within the App:</strong> You can press the "Delete My Account" button in the main dropdown menu.</li>
-      <li><strong>Via the Web:</strong> You can also request account deletion through the following link:</li>
+      <li><strong>Session Cookies:</strong> We use them to maintain your login. These tokens are temporary, <strong>HttpOnly</strong> (cannot be read by JavaScript), and <strong>Secure</strong> (sent only over HTTPS), and they expire after <strong>30 days</strong>.</li>
+      <li><strong>Local Storage:</strong> We use it to save your preferences such as dark/light mode on your device only. It is not sent to the server.</li>
+      <li><strong>We do not use</strong> any persistent cookies to track you across other websites, nor any advertising analytics tools (such as Google Analytics or Facebook Pixel).</li>
     </ul>
 
-    <p style="text-align: center;">
-      <a href="https://abod724.github.io/nibras-privacy/delete-account.html" class="delete-link">🗑️ Account Deletion Page</a>
-    </p>
+    <h2>5. Data Security</h2>
+    <p>We use advanced security measures to protect your data:</p>
+    <ul>
+      <li><strong>Password hashing:</strong> Using strong hashing algorithms (Werkzeug).</li>
+      <li><strong>Signed invitation codes:</strong> Using HMAC-SHA256, preventing forgery or unauthorized use.</li>
+      <li><strong>HTTPS protocol:</strong> All communications between you and the server are encrypted.</li>
+      <li><strong>Rate Limiting:</strong> To protect the Service from abuse.</li>
+      <li><strong>Limited CORS policies:</strong> To ensure requests originate only from trusted sources.</li>
+    </ul>
+    <p>However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.</p>
 
-    <p><strong>Deletion Period:</strong> Upon requesting account deletion, all your data and chats are permanently deleted within a maximum of 30 days from the request date.</p>
-    <p>You also have the right to request a copy of your data or object to its processing by contacting us.</p>
+    <h2>6. Data Retention and Account Deletion</h2>
 
-    <h2>6. Data Security</h2>
-    <p>We use reasonable and advanced security measures (such as password encryption, HTTPS protocols, and restricted data access) to protect your data. However, no method of transmission over the Internet is 100% secure, and we cannot guarantee absolute security.</p>
+    <h3>Retention Period</h3>
+    <ul>
+      <li><strong>For Guests:</strong> We do not retain any personal information. Only the daily question count (reset daily).</li>
+      <li><strong>For Registered Members:</strong> We retain your data (email, hashed password, conversation history) as long as your account is active and your access code has not expired.</li>
+      <li><strong>For Deletion Requests:</strong> We retain the deletion request log until it is processed, then it is deleted.</li>
+    </ul>
+
+    <h3>Your Data Deletion Rights</h3>
+    <p>You have the right to delete all your data, conversations, and account at any time:</p>
+    <ul>
+      <li><strong>From within the App:</strong> You can click "Delete My Account" in the main dropdown menu. <strong>This action is immediate</strong> and deletes all your data directly.</li>
+      <li><strong>Via the Web:</strong> You can request account deletion through the following link, providing your email address and password to verify your identity:</li>
+    </ul>
+    <div class="highlight">
+      🗑️ <strong>Account Deletion Page:</strong><br>
+      <a href="https://abod724.github.io/nibras-privacy/delete-account.html">https://abod724.github.io/nibras-privacy/delete-account.html</a><br>
+      <small>Note: Requests submitted via the web are processed within a maximum of 30 days from the request date.</small>
+    </div>
+    <p>You also have the right to request a copy of your data or object to its processing by contacting us via email.</p>
+
+    <h3>What Gets Deleted?</h3>
+    <ul>
+      <li>Your email and hashed password.</li>
+      <li>All your previous conversations.</li>
+      <li>Your preferences and settings.</li>
+      <li>Your dedicated access code.</li>
+    </ul>
 
     <h2>7. Children's Privacy</h2>
     <p>The Service is not directed to anyone under the age of 16, and we do not knowingly collect their information. If we discover that we have collected data from a child under 16, we will delete it immediately.</p>
 
     <h2>8. Changes to This Privacy Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the "Last updated" date at the top will be revised. We recommend reviewing this policy periodically.</p>
+    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page, and the "Last updated" date at the top will be revised. You are advised to review this Privacy Policy periodically.</p>
 
     <h2>9. Contact Us</h2>
     <p>For any questions or inquiries about this Privacy Policy, you can contact us via:</p>
-    <div class="contact-info">
-      <p>📧 <strong>Email:</strong> <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a></p>
-      <p>📱 <strong>Phone:</strong> <a href="tel:+966569361182">+966 56 936 1182</a></p>
-    </div>
-
-    <p class="footer">© 2026 Nibras GP. All rights reserved.</p>
+    <ul>
+      <li>📧 Email: <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a></li>
+      <li>📱 Phone: <a href="tel:+966569361182">+966 56 936 1182</a></li>
+    </ul>
   </div>
+
+  <footer>
+    © 2026 نبراس GP. جميع الحقوق محفوظة. All rights reserved.
+  </footer>
 
 </div>
 
 <script>
-function setLang(lang) {
-  const arContent = document.getElementById('ar-content');
-  const enContent = document.getElementById('en-content');
-  const buttons = document.querySelectorAll('.lang-btn');
-
-  buttons.forEach(btn => btn.classList.remove('active'));
-
-  if (lang === 'ar') {
-    arContent.classList.remove('hidden');
-    enContent.classList.add('hidden');
-    document.documentElement.lang = 'ar';
-    document.documentElement.dir = 'rtl';
-    buttons[0].classList.add('active');
-  } else {
-    arContent.classList.add('hidden');
-    enContent.classList.remove('hidden');
-    document.documentElement.lang = 'en';
-    document.documentElement.dir = 'ltr';
-    buttons[1].classList.add('active');
+  function showLang(lang) {
+    const ar = document.querySelector('.ar');
+    const en = document.querySelector('.en');
+    if (lang === 'ar') {
+      ar.style.display = 'block';
+      en.style.display = 'none';
+      document.documentElement.dir = 'rtl';
+      document.documentElement.lang = 'ar';
+    } else {
+      ar.style.display = 'none';
+      en.style.display = 'block';
+      document.documentElement.dir = 'ltr';
+      document.documentElement.lang = 'en';
+    }
   }
-}
 </script>
 
 </body>
