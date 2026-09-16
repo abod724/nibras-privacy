@@ -122,7 +122,7 @@
       <li><strong>المستخدم:</strong> يشير إلى أي شخص يستخدم الخدمة (ضيف أو عضو مسجل).</li>
       <li><strong>الضيف:</strong> مستخدم يستخدم الخدمة دون تسجيل دخول.</li>
       <li><strong>العضو المسجل:</strong> مستخدم سجّل دخوله عبر كود دعوة مخصص.</li>
-      <li><strong>كود الدعوة:</strong> كود مشفّر (HMAC) يمنحه المطور لمستخدم بعينه لتفعيل حسابه لمدة محددة.</li>
+      <li><strong>كود الوصول:</strong> كود مشفّر (HMAC-SHA256) يمنحه المطور لمستخدم بعينه لتفعيل حسابه لمدة محددة.</li>
     </ul>
 
     <h2>2. جمع واستخدام المعلومات</h2>
@@ -139,9 +139,9 @@
     <h3>ب. الاستخدام كعضو مسجل</h3>
     <p>يتم التسجيل عبر نظام "كود الدعوة" الذي يمنحه لك المطور. عند التسجيل، نجمع ونخزن البيانات التالية لتقديم الخدمة:</p>
     <ul>
-      <li><strong>البريد الإلكتروني:</strong> لتعريف حسابك وتفعيل كود الدعوة المخصص لك.</li>
+      <li><strong>البريد الإلكتروني:</strong> لتعريف حسابك وتفعيل كود الوصول المخصص لك.</li>
       <li><strong>كلمة المرور:</strong> تُخزَّن مشفّرة بالكامل باستخدام خوارزميات تشفير آمنة (Werkzeug Password Hashing). لا يمكن لأي شخص، بما في ذلك المطور، قراءتها.</li>
-      <li><strong>تاريخ انتهاء كود الوصول:</strong> لمعرفة متى ينتهي اشتراكك.</li>
+      <li><strong>تاريخ انتهاء كود الوصول:</strong> لمعرفة متى تنتهي صلاحية كود الوصول الخاص بك.</li>
       <li><strong>إعداداتك:</strong> مثل جنس الصوت المفضل (ذكر/أنثى).</li>
       <li><strong>سجل المحادثات:</strong> لحفظ محادثاتك السابقة وتقديم تجربة متسقة.</li>
     </ul>
@@ -149,7 +149,7 @@
     <h3>ج. محتوى المستخدم (نصوص وصور)</h3>
     <ul>
       <li><strong>النصوص (الأسئلة والاستفسارات):</strong> تُعالج لحظياً لتوليد الردود، وتُرسل إلى مزود خدمة الذكاء الاصطناعي. يتم تخزينها في قاعدة بياناتنا فقط إذا كنت عضوًا مسجلًا (لحفظ سجل المحادثات).</li>
-      <li><strong>الصور (للتحليل):</strong> عند رفعك صورة لتحليلها، تُرسل إلى مزود خدمة الذكاء الاصطناعي (OpenAI) لمعالجتها لحظياً. لا يتم تخزين الصور في خوادمنا إطلاقاً.</li>
+      <li><strong>الصور (للتحليل):</strong> عند رفعك صورة لتحليلها، تُضغط على جهازك قبل الإرسال، ثم تُرسل إلى مزود خدمة الذكاء الاصطناعي (OpenAI) لمعالجتها لحظياً. لا يتم تخزين الصور في خوادمنا إطلاقاً.</li>
       <li><strong>طلبات الرسم/الفيديو:</strong> عند طلبك صورة أو فيديو، يُرسل وصف طلبك إلى خدمة Pexels للبحث عن الوسائط المناسبة.</li>
     </ul>
 
@@ -176,7 +176,7 @@
     <p>نستخدم وسائل أمان متقدمة لحماية بياناتك:</p>
     <ul>
       <li><strong>تشفير كلمات المرور:</strong> باستخدام خوارزميات تشفير قوية (Werkzeug).</li>
-      <li><strong>أكواد دعوة موقّعة:</strong> باستخدام HMAC-SHA256، مما يمنع تزويرها أو استخدامها من قِبل غير المصرح لهم.</li>
+      <li><strong>أكواد وصول موقّعة:</strong> باستخدام HMAC-SHA256، مما يمنع تزويرها أو استخدامها من قِبل غير المصرح لهم.</li>
       <li><strong>بروتوكول HTTPS:</strong> جميع الاتصالات بينك وبين السيرفر مشفّرة.</li>
       <li><strong>تحديد معدل الطلبات (Rate Limiting):</strong> لحماية الخدمة من إساءة الاستخدام.</li>
       <li><strong>سياسات CORS محدودة:</strong> لضمان أن الطلبات تأتي من مصادر موثوقة فقط.</li>
@@ -188,7 +188,7 @@
     <h3>مدة الاحتفاظ</h3>
     <ul>
       <li><strong>للضيوف:</strong> لا نحتفظ بأي معلومات شخصية. فقط عدد الأسئلة اليومية (يُصفَّر يومياً).</li>
-      <li><strong>للأعضاء المسجلين:</strong> نحتفظ ببياناتك (البريد الإلكتروني، كلمة المرور المشفرة، سجل المحادثات) طالما حسابك نشط ولم ينتهِ كود الوصول الخاص بك.</li>
+      <li><strong>للأعضاء المسجلين:</strong> نحتفظ ببياناتك (البريد الإلكتروني، كلمة المرور المشفرة، سجل المحادثات) طالما حسابك نشط ولم تنتهِ صلاحية كود الوصول الخاص بك.</li>
       <li><strong>لطلبات الحذف:</strong> نحتفظ بسجل طلب الحذف حتى معالجته، ثم يُحذف.</li>
     </ul>
 
@@ -242,7 +242,7 @@
       <li><strong>User:</strong> Refers to anyone using the Service (Guest or Registered Member).</li>
       <li><strong>Guest:</strong> A user who uses the Service without logging in.</li>
       <li><strong>Registered Member:</strong> A user who logged in via a dedicated invitation code.</li>
-      <li><strong>Invitation Code:</strong> A cryptographically signed code (HMAC) granted by the Developer to a specific user to activate their account for a limited period.</li>
+      <li><strong>Access Code:</strong> A cryptographically signed code (HMAC-SHA256) granted by the Developer to a specific user to activate their account for a limited period.</li>
     </ul>
 
     <h2>2. Collection and Use of Information</h2>
@@ -259,9 +259,9 @@
     <h3>B. Registered Member Mode</h3>
     <p>Registration is done via an "Invitation Code" system provided by the Developer. Upon registration, we collect and store the following data to provide the Service:</p>
     <ul>
-      <li><strong>Email address:</strong> To identify your account and activate your dedicated invitation code.</li>
+      <li><strong>Email address:</strong> To identify your account and activate your dedicated access code.</li>
       <li><strong>Password:</strong> Stored fully hashed using secure hashing algorithms (Werkzeug Password Hashing). No one, including the Developer, can read it.</li>
-      <li><strong>Access code expiry date:</strong> To know when your access period ends.</li>
+      <li><strong>Access code expiry date:</strong> To know when your access code expires.</li>
       <li><strong>Your preferences:</strong> Such as preferred voice gender (male/female).</li>
       <li><strong>Conversation history:</strong> To save your previous conversations and provide a consistent experience.</li>
     </ul>
@@ -269,7 +269,7 @@
     <h3>C. User Content (Text and Images)</h3>
     <ul>
       <li><strong>Text (questions and inquiries):</strong> Processed in real-time to generate responses, and sent to a third-party AI provider. Stored in our database only if you are a registered member (to save conversation history).</li>
-      <li><strong>Images (for analysis):</strong> When you upload an image for analysis, it is sent to a third-party AI provider (OpenAI) for real-time processing. Images are never stored on our servers.</li>
+      <li><strong>Images (for analysis):</strong> When you upload an image for analysis, it is compressed on your device before sending, then sent to a third-party AI provider (OpenAI) for real-time processing. Images are never stored on our servers.</li>
       <li><strong>Image/Video Requests:</strong> When you request an image or video, your request description is sent to Pexels to search for appropriate media.</li>
     </ul>
 
@@ -296,7 +296,7 @@
     <p>We use advanced security measures to protect your data:</p>
     <ul>
       <li><strong>Password hashing:</strong> Using strong hashing algorithms (Werkzeug).</li>
-      <li><strong>Signed invitation codes:</strong> Using HMAC-SHA256, preventing forgery or unauthorized use.</li>
+      <li><strong>Signed access codes:</strong> Using HMAC-SHA256, preventing forgery or unauthorized use.</li>
       <li><strong>HTTPS protocol:</strong> All communications between you and the server are encrypted.</li>
       <li><strong>Rate Limiting:</strong> To protect the Service from abuse.</li>
       <li><strong>Limited CORS policies:</strong> To ensure requests originate only from trusted sources.</li>
