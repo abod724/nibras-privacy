@@ -69,7 +69,6 @@
   }
   .lang-switch button:hover { background: #3a5a7a; }
   .en { display: none; direction: ltr; text-align: left; }
-  .en h1 { border-bottom: 2px solid #eaeef2; }
   .en h2 { border-right: none; border-left: 4px solid #4a6a8a; padding-right: 0; padding-left: 12px; }
   .en ul { padding-right: 0; padding-left: 25px; }
   .highlight {
@@ -110,19 +109,18 @@
   <!-- ================= النسخة العربية ================= -->
   <div class="ar">
     <h1>سياسة الخصوصية</h1>
-    <p class="date">آخر تحديث: 16 سبتمبر 2026</p>
+    <p class="date">آخر تحديث: 8 أكتوبر 2026</p>
 
-    <p>مرحبًا بك في تطبيق <strong>"نبراس GP"</strong>. نحن نأخذ خصوصيتك على محمل الجد. توضح سياسة الخصوصية هذه كيفية جمع بياناتك واستخدامها وحمايتها عند استخدامك لتطبيقنا أو موقعنا الإلكتروني. باستخدامك للخدمة، فإنك توافق على الممارسات الموضحة في هذه السياسة.</p>
+    <p>مرحبًا بك في تطبيق <strong>"نبراس GP"</strong>. نحن نأخذ خصوصيتك على محمل الجد. توضح سياسة الخصوصية هذه كيفية جمع بياناتك واستخدامها وحمايتها عند استخدامك لتطبيقنا. باستخدامك للخدمة، فإنك توافق على الممارسات الموضحة في هذه السياسة.</p>
 
     <h2>1. التعريفات</h2>
     <ul>
       <li><strong>التطبيق:</strong> يشير إلى "نبراس GP".</li>
-      <li><strong>المطور:</strong> يشير إلى عبدالله حسين المطيري.</li>
+      <li><strong>المطور:</strong> مشروع سعودي مستقل.</li>
       <li><strong>الخدمة:</strong> تشير إلى التطبيق أو الموقع الإلكتروني.</li>
-      <li><strong>المستخدم:</strong> يشير إلى أي شخص يستخدم الخدمة (ضيف أو عضو مسجل).</li>
+      <li><strong>المستخدم:</strong> أي شخص يستخدم الخدمة (ضيف أو عضو مسجل).</li>
       <li><strong>الضيف:</strong> مستخدم يستخدم الخدمة دون تسجيل دخول.</li>
-      <li><strong>العضو المسجل:</strong> مستخدم سجّل دخوله عبر كود دعوة مخصص.</li>
-      <li><strong>كود الوصول:</strong> كود مشفّر (HMAC-SHA256) يمنحه المطور لمستخدم بعينه لتفعيل حسابه لمدة محددة.</li>
+      <li><strong>العضو المسجل:</strong> مستخدم أنشأ حساباً عبر البريد الإلكتروني وكلمة المرور.</li>
     </ul>
 
     <h2>2. جمع واستخدام المعلومات</h2>
@@ -132,34 +130,45 @@
     <ul>
       <li>لا نجمع أي معلومات شخصية تحدد هويتك (لا اسم، لا إيميل، لا هاتف).</li>
       <li>يُمنح لك معرّف جلسة مؤقت (Session ID) عشوائي لتتبع استخدامك خلال الزيارة.</li>
-      <li>استخدامك محدود بـ <strong>15 سؤالاً يوميًا</strong>، يُسجَّل عددها وتاريخها فقط.</li>
+      <li>استخدامك محدود بـ <strong>15 سؤالاً يوميًا</strong>، بدون بحث في الويب أو تحليل صور.</li>
       <li>لا يتم حفظ محادثاتك بشكل دائم.</li>
     </ul>
 
     <h3>ب. الاستخدام كعضو مسجل</h3>
-    <p>يتم التسجيل عبر نظام "كود الدعوة" الذي يمنحه لك المطور. عند التسجيل، نجمع ونخزن البيانات التالية لتقديم الخدمة:</p>
+    <p>عند التسجيل في التطبيق، نجمع ونخزن البيانات التالية لتقديم الخدمة:</p>
     <ul>
-      <li><strong>البريد الإلكتروني:</strong> لتعريف حسابك وتفعيل كود الوصول المخصص لك.</li>
-      <li><strong>كلمة المرور:</strong> تُخزَّن مشفّرة بالكامل باستخدام خوارزميات تشفير آمنة (Werkzeug Password Hashing). لا يمكن لأي شخص، بما في ذلك المطور، قراءتها.</li>
-      <li><strong>تاريخ انتهاء كود الوصول:</strong> لمعرفة متى تنتهي صلاحية كود الوصول الخاص بك.</li>
-      <li><strong>إعداداتك:</strong> مثل جنس الصوت المفضل (ذكر/أنثى).</li>
+      <li><strong>البريد الإلكتروني:</strong> لتعريف حسابك وتسجيل دخولك.</li>
+      <li><strong>كلمة المرور:</strong> تُخزَّن مشفّرة بالكامل عبر خدمة Supabase Auth (باستخدام bcrypt). لا يمكن لأي شخص، بما في ذلك المطور، قراءتها.</li>
+      <li><strong>الاسم (اختياري):</strong> لعرضه في واجهة التطبيق.</li>
       <li><strong>سجل المحادثات:</strong> لحفظ محادثاتك السابقة وتقديم تجربة متسقة.</li>
+      <li><strong>الذاكرة:</strong> لحفظ اسمك، تفضيلاتك، وملخصات محادثاتك السابقة.</li>
+      <li><strong>إعداداتك:</strong> مثل جنس الصوت المفضل (ذكر/أنثى).</li>
+      <li><strong>سجل الاستخدام اليومي:</strong> عدد المحادثات، البحث، وتحليل الصور.</li>
     </ul>
 
-    <h3>ج. محتوى المستخدم (نصوص وصور)</h3>
+    <h3>ج. الحدود اليومية</h3>
     <ul>
-      <li><strong>النصوص (الأسئلة والاستفسارات):</strong> تُعالج لحظياً لتوليد الردود، وتُرسل إلى مزود خدمة الذكاء الاصطناعي. يتم تخزينها في قاعدة بياناتنا فقط إذا كنت عضوًا مسجلًا (لحفظ سجل المحادثات).</li>
-      <li><strong>الصور (للتحليل):</strong> عند رفعك صورة لتحليلها، تُضغط على جهازك قبل الإرسال، ثم تُرسل إلى مزود خدمة الذكاء الاصطناعي (OpenAI) لمعالجتها لحظياً. لا يتم تخزين الصور في خوادمنا إطلاقاً.</li>
-      <li><strong>طلبات الرسم/الفيديو:</strong> عند طلبك صورة أو فيديو، يُرسل وصف طلبك إلى خدمة Pexels للبحث عن الوسائط المناسبة.</li>
+      <li><strong>الضيوف:</strong> 15 محادثة يومياً، بدون بحث في الويب أو تحليل صور.</li>
+      <li><strong>الأعضاء المسجلين:</strong> 15 محادثة + بحثان في الويب + تحليل صورة واحدة يومياً.</li>
+      <li>تُصفَّر الحدود تلقائياً كل يوم في منتصف الليل.</li>
     </ul>
 
-    <h3>د. بيانات الاستخدام التلقائية</h3>
+    <h3>د. محتوى المستخدم (نصوص وصور)</h3>
+    <ul>
+      <li><strong>النصوص (الأسئلة والاستفسارات):</strong> تُعالج لحظياً لتوليد الردود، وتُرسل إلى مزود خدمة الذكاء الاصطناعي (OpenAI). يتم تخزينها في قاعدة بياناتنا فقط إذا كنت عضواً مسجلاً (لحفظ سجل المحادثات).</li>
+      <li><strong>الصور (للتحليل):</strong> عند رفعك صورة لتحليلها، تُضغط على جهازك قبل الإرسال، ثم تُرسل إلى مزود خدمة الذكاء الاصطناعي (OpenAI) لمعالجتها لحظياً. لا يتم تخزين الصور في خوادمنا إطلاقاً.</li>
+      <li><strong>الملفات المرفوعة للمكتبة:</strong> إذا اخترت حفظ صورة في "مكتبتك"، تُخزَّن في قاعدة بياناتنا بشكل مشفر، ويمكنك حذفها في أي وقت.</li>
+    </ul>
+
+    <h3>هـ. بيانات الاستخدام التلقائية</h3>
     <p>عند وصولك إلى الخدمة، قد نستخدم عنوان IP الخاص بك ونوع المتصفح بشكل <strong>لحظي فقط</strong> لأغراض أمنية بحتة (منع إساءة الاستخدام والحد من الطلبات المتكررة). <strong>لا يتم تخزين هذه البيانات بشكل دائم</strong>، بل تُحفظ في الذاكرة المؤقتة للسيرفر فقط وتضيع عند إعادة تشغيله.</p>
 
     <h2>3. مزودو الخدمة (أطراف ثالثة)</h2>
     <p>نحن <strong>لا نبيع</strong> بياناتك الشخصية ولا نشاركها مع أي طرف ثالث لأغراض تجارية أو تسويقية. نستخدم مزودي خدمات خارجيين لتشغيل ميزات التطبيق، وقد تتم معالجة بياناتك من قبلهم وفقًا لسياسات الخصوصية الخاصة بهم:</p>
     <ul>
       <li><strong>OpenAI:</strong> لمعالجة المحادثات، توليد الردود، البحث في الويب، وتحليل الصور. (<a href="https://openai.com/privacy" target="_blank">سياسة الخصوصية</a>)</li>
+      <li><strong>Supabase:</strong> لتخزين البيانات بشكل آمن (الحساب، المحادثات، المكتبة). (<a href="https://supabase.com/privacy" target="_blank">سياسة الخصوصية</a>)</li>
+      <li><strong>Render:</strong> لاستضافة التطبيق والسيرفر. (<a href="https://render.com/privacy" target="_blank">سياسة الخصوصية</a>)</li>
       <li><strong>Pexels:</strong> لتوفير الصور والفيديوهات المجانية عند طلبها. (<a href="https://www.pexels.com/privacy-policy/" target="_blank">سياسة الخصوصية</a>)</li>
       <li><strong>Microsoft Edge TTS:</strong> لتحويل النص إلى صوت (صوت المساعد). (<a href="https://privacy.microsoft.com/" target="_blank">سياسة الخصوصية</a>)</li>
     </ul>
@@ -169,14 +178,14 @@
     <ul>
       <li><strong>رموز الجلسة (Session Cookies):</strong> نستخدمها للحفاظ على تسجيل دخولك. هذه الرموز مؤقتة، <strong>HttpOnly</strong> (لا يمكن قراءتها بواسطة JavaScript)، و<strong>Secure</strong> (تُرسل فقط عبر HTTPS)، وتنتهي صلاحيتها بعد <strong>30 يوماً</strong>.</li>
       <li><strong>التخزين المحلي (Local Storage):</strong> نستخدمه لحفظ تفضيلاتك مثل الوضع الليلي/النهاري على جهازك فقط. لا يُرسل إلى السيرفر.</li>
-      <li><strong>لا نستخدم</strong> أي ملفات تعريف ارتباط دائمة لتتبعك عبر مواقع أخرى، ولا أدوات تحليل إعلانية (مثل Google Analytics أو Facebook Pixel).</li>
+      <li><strong>لا نستخدم</strong> أي ملفات تعريف ارتباط دائمة لتتبعك عبر مواقع أخرى، ولا أدوات تحليل إعلانية.</li>
     </ul>
 
     <h2>5. أمان البيانات</h2>
     <p>نستخدم وسائل أمان متقدمة لحماية بياناتك:</p>
     <ul>
-      <li><strong>تشفير كلمات المرور:</strong> باستخدام خوارزميات تشفير قوية (Werkzeug).</li>
-      <li><strong>أكواد وصول موقّعة:</strong> باستخدام HMAC-SHA256، مما يمنع تزويرها أو استخدامها من قِبل غير المصرح لهم.</li>
+      <li><strong>تشفير كلمات المرور:</strong> باستخدام bcrypt عبر Supabase Auth.</li>
+      <li><strong>التحقق من البريد الإلكتروني:</strong> عند التسجيل، لتأكيد ملكية البريد.</li>
       <li><strong>بروتوكول HTTPS:</strong> جميع الاتصالات بينك وبين السيرفر مشفّرة.</li>
       <li><strong>تحديد معدل الطلبات (Rate Limiting):</strong> لحماية الخدمة من إساءة الاستخدام.</li>
       <li><strong>سياسات CORS محدودة:</strong> لضمان أن الطلبات تأتي من مصادر موثوقة فقط.</li>
@@ -188,7 +197,7 @@
     <h3>مدة الاحتفاظ</h3>
     <ul>
       <li><strong>للضيوف:</strong> لا نحتفظ بأي معلومات شخصية. فقط عدد الأسئلة اليومية (يُصفَّر يومياً).</li>
-      <li><strong>للأعضاء المسجلين:</strong> نحتفظ ببياناتك (البريد الإلكتروني، كلمة المرور المشفرة، سجل المحادثات) طالما حسابك نشط ولم تنتهِ صلاحية كود الوصول الخاص بك.</li>
+      <li><strong>للأعضاء المسجلين:</strong> نحتفظ ببياناتك (البريد الإلكتروني، كلمة المرور المشفرة، سجل المحادثات، الذاكرة) طالما حسابك نشط.</li>
       <li><strong>لطلبات الحذف:</strong> نحتفظ بسجل طلب الحذف حتى معالجته، ثم يُحذف.</li>
     </ul>
 
@@ -209,8 +218,9 @@
     <ul>
       <li>البريد الإلكتروني وكلمة المرور المشفرة.</li>
       <li>جميع محادثاتك السابقة.</li>
+      <li>ذاكرتك (اسمك، تفضيلاتك، ملخصات محادثاتك السابقة).</li>
+      <li>مكتبتك من الصور المرفوعة.</li>
       <li>إعداداتك وتفضيلاتك.</li>
-      <li>كود الوصول المخصص لك.</li>
     </ul>
 
     <h2>7. خصوصية الأطفال</h2>
@@ -230,19 +240,18 @@
   <!-- ================= English Version ================= -->
   <div class="en">
     <h1>Privacy Policy</h1>
-    <p class="date">Last updated: September 16, 2026</p>
+    <p class="date">Last updated: October 8, 2026</p>
 
-    <p>Welcome to the <strong>"Nibras GP"</strong> application. We take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your data when you use our application or website. By using the Service, you agree to the practices described in this policy.</p>
+    <p>Welcome to the <strong>"Nibras GP"</strong> application. We take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your data when you use our application. By using the Service, you agree to the practices described in this policy.</p>
 
     <h2>1. Definitions</h2>
     <ul>
       <li><strong>Application:</strong> Refers to "Nibras GP".</li>
-      <li><strong>Developer:</strong> Refers to Abdullah Hussein Al-Mutairi.</li>
+      <li><strong>Developer:</strong> An independent Saudi project.</li>
       <li><strong>Service:</strong> Refers to the Application or the Website.</li>
-      <li><strong>User:</strong> Refers to anyone using the Service (Guest or Registered Member).</li>
+      <li><strong>User:</strong> Anyone using the Service (Guest or Registered Member).</li>
       <li><strong>Guest:</strong> A user who uses the Service without logging in.</li>
-      <li><strong>Registered Member:</strong> A user who logged in via a dedicated invitation code.</li>
-      <li><strong>Access Code:</strong> A cryptographically signed code (HMAC-SHA256) granted by the Developer to a specific user to activate their account for a limited period.</li>
+      <li><strong>Registered Member:</strong> A user who created an account via email and password.</li>
     </ul>
 
     <h2>2. Collection and Use of Information</h2>
@@ -252,34 +261,45 @@
     <ul>
       <li>We do not collect any personal information that identifies you (no name, email, or phone).</li>
       <li>You are given a temporary random Session ID to track your usage during your visit.</li>
-      <li>Your usage is limited to <strong>15 questions per day</strong>; only the count and date are recorded.</li>
+      <li>Your usage is limited to <strong>15 questions per day</strong>, without web search or image analysis.</li>
       <li>Your conversations are not permanently stored.</li>
     </ul>
 
     <h3>B. Registered Member Mode</h3>
-    <p>Registration is done via an "Invitation Code" system provided by the Developer. Upon registration, we collect and store the following data to provide the Service:</p>
+    <p>Upon registration, we collect and store the following data to provide the Service:</p>
     <ul>
-      <li><strong>Email address:</strong> To identify your account and activate your dedicated access code.</li>
-      <li><strong>Password:</strong> Stored fully hashed using secure hashing algorithms (Werkzeug Password Hashing). No one, including the Developer, can read it.</li>
-      <li><strong>Access code expiry date:</strong> To know when your access code expires.</li>
-      <li><strong>Your preferences:</strong> Such as preferred voice gender (male/female).</li>
+      <li><strong>Email address:</strong> To identify your account and log in.</li>
+      <li><strong>Password:</strong> Stored fully hashed via Supabase Auth (using bcrypt). No one, including the Developer, can read it.</li>
+      <li><strong>Name (optional):</strong> To display in the app.</li>
       <li><strong>Conversation history:</strong> To save your previous conversations and provide a consistent experience.</li>
+      <li><strong>Memory:</strong> To save your name, preferences, and summaries of your previous conversations.</li>
+      <li><strong>Your preferences:</strong> Such as preferred voice gender (male/female).</li>
+      <li><strong>Daily usage log:</strong> Number of chats, searches, and image analyses.</li>
     </ul>
 
-    <h3>C. User Content (Text and Images)</h3>
+    <h3>C. Daily Limits</h3>
     <ul>
-      <li><strong>Text (questions and inquiries):</strong> Processed in real-time to generate responses, and sent to a third-party AI provider. Stored in our database only if you are a registered member (to save conversation history).</li>
-      <li><strong>Images (for analysis):</strong> When you upload an image for analysis, it is compressed on your device before sending, then sent to a third-party AI provider (OpenAI) for real-time processing. Images are never stored on our servers.</li>
-      <li><strong>Image/Video Requests:</strong> When you request an image or video, your request description is sent to Pexels to search for appropriate media.</li>
+      <li><strong>Guests:</strong> 15 chats per day, without web search or image analysis.</li>
+      <li><strong>Registered Members:</strong> 15 chats + 2 web searches + 1 image analysis per day.</li>
+      <li>Limits reset automatically every day at midnight.</li>
     </ul>
 
-    <h3>D. Automatic Usage Data</h3>
+    <h3>D. User Content (Text and Images)</h3>
+    <ul>
+      <li><strong>Text (questions and inquiries):</strong> Processed in real-time to generate responses, and sent to a third-party AI provider (OpenAI). Stored in our database only if you are a registered member (to save conversation history).</li>
+      <li><strong>Images (for analysis):</strong> When you upload an image for analysis, it is compressed on your device before sending, then sent to a third-party AI provider (OpenAI) for real-time processing. Images are never stored on our servers.</li>
+      <li><strong>Files uploaded to the library:</strong> If you choose to save an image to "your library", it is stored in our database securely, and you can delete it anytime.</li>
+    </ul>
+
+    <h3>E. Automatic Usage Data</h3>
     <p>When you access the Service, we may use your IP address and browser type <strong>in real-time only</strong> for security purposes (abuse prevention and rate limiting). <strong>This data is not stored permanently</strong>; it is kept only in the server's temporary memory and is lost when the server restarts.</p>
 
     <h2>3. Third-Party Service Providers</h2>
     <p>We <strong>do not sell</strong> your personal data and do not share it with any third party for commercial or marketing purposes. We use external service providers to operate the Application's features, and your data may be processed by them in accordance with their own privacy policies:</p>
     <ul>
       <li><strong>OpenAI:</strong> For processing conversations, generating responses, web search, and image analysis. (<a href="https://openai.com/privacy" target="_blank">Privacy Policy</a>)</li>
+      <li><strong>Supabase:</strong> For secure data storage (account, conversations, library). (<a href="https://supabase.com/privacy" target="_blank">Privacy Policy</a>)</li>
+      <li><strong>Render:</strong> For hosting the application and server. (<a href="https://render.com/privacy" target="_blank">Privacy Policy</a>)</li>
       <li><strong>Pexels:</strong> To provide free images and videos upon request. (<a href="https://www.pexels.com/privacy-policy/" target="_blank">Privacy Policy</a>)</li>
       <li><strong>Microsoft Edge TTS:</strong> For text-to-speech conversion (assistant voice). (<a href="https://privacy.microsoft.com/" target="_blank">Privacy Policy</a>)</li>
     </ul>
@@ -289,14 +309,14 @@
     <ul>
       <li><strong>Session Cookies:</strong> We use them to maintain your login. These tokens are temporary, <strong>HttpOnly</strong> (cannot be read by JavaScript), and <strong>Secure</strong> (sent only over HTTPS), and they expire after <strong>30 days</strong>.</li>
       <li><strong>Local Storage:</strong> We use it to save your preferences such as dark/light mode on your device only. It is not sent to the server.</li>
-      <li><strong>We do not use</strong> any persistent cookies to track you across other websites, nor any advertising analytics tools (such as Google Analytics or Facebook Pixel).</li>
+      <li><strong>We do not use</strong> any persistent cookies to track you across other websites, nor any advertising analytics tools.</li>
     </ul>
 
     <h2>5. Data Security</h2>
     <p>We use advanced security measures to protect your data:</p>
     <ul>
-      <li><strong>Password hashing:</strong> Using strong hashing algorithms (Werkzeug).</li>
-      <li><strong>Signed access codes:</strong> Using HMAC-SHA256, preventing forgery or unauthorized use.</li>
+      <li><strong>Password hashing:</strong> Using bcrypt via Supabase Auth.</li>
+      <li><strong>Email verification:</strong> Upon registration, to confirm email ownership.</li>
       <li><strong>HTTPS protocol:</strong> All communications between you and the server are encrypted.</li>
       <li><strong>Rate Limiting:</strong> To protect the Service from abuse.</li>
       <li><strong>Limited CORS policies:</strong> To ensure requests originate only from trusted sources.</li>
@@ -308,7 +328,7 @@
     <h3>Retention Period</h3>
     <ul>
       <li><strong>For Guests:</strong> We do not retain any personal information. Only the daily question count (reset daily).</li>
-      <li><strong>For Registered Members:</strong> We retain your data (email, hashed password, conversation history) as long as your account is active and your access code has not expired.</li>
+      <li><strong>For Registered Members:</strong> We retain your data (email, hashed password, conversation history, memory) as long as your account is active.</li>
       <li><strong>For Deletion Requests:</strong> We retain the deletion request log until it is processed, then it is deleted.</li>
     </ul>
 
@@ -329,8 +349,9 @@
     <ul>
       <li>Your email and hashed password.</li>
       <li>All your previous conversations.</li>
+      <li>Your memory (name, preferences, summaries of previous conversations).</li>
+      <li>Your library of uploaded images.</li>
       <li>Your preferences and settings.</li>
-      <li>Your dedicated access code.</li>
     </ul>
 
     <h2>7. Children's Privacy</h2>
