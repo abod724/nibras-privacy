@@ -68,6 +68,7 @@
     font-size: 15px;
   }
   .lang-switch button:hover { background: #3a5a7a; }
+  .lang-switch button.active { background: #2c4a66; }
   .en { display: none; direction: ltr; text-align: left; }
   .en h2 { border-right: none; border-left: 4px solid #4a6a8a; padding-right: 0; padding-left: 12px; }
   .en ul { padding-right: 0; padding-left: 25px; }
@@ -102,8 +103,8 @@
 <div class="container">
 
   <div class="lang-switch">
-    <button onclick="showLang('ar')">🇸🇦 العربية</button>
-    <button onclick="showLang('en')">🇬🇧 English</button>
+    <button onclick="showLang('ar')" id="btnAr" class="active">🇸🇦 العربية</button>
+    <button onclick="showLang('en')" id="btnEn">🇬🇧 English</button>
   </div>
 
   <!-- ================= النسخة العربية ================= -->
@@ -210,7 +211,7 @@
     <div class="highlight">
       🗑️ <strong>صفحة حذف الحساب:</strong><br>
       <a href="https://abod724.github.io/nibras-privacy/delete-account.html">https://abod724.github.io/nibras-privacy/delete-account.html</a><br>
-      <small>ملاحظة: يتم تنفيذ الطلبات المقدمة عبر الويب خلال مدة أقصاها 30 يوماً من تاريخ الطلب.</small>
+      <small>ملاحظة: يتم تنفيذ الطلبات المقدمة عبر الويب فوراً بعد التأكيد.</small>
     </div>
     <p>يحق لك أيضًا طلب نسخة من بياناتك أو الاعتراض على معالجتها عبر التواصل معنا عبر البريد الإلكتروني.</p>
 
@@ -341,7 +342,7 @@
     <div class="highlight">
       🗑️ <strong>Account Deletion Page:</strong><br>
       <a href="https://abod724.github.io/nibras-privacy/delete-account.html">https://abod724.github.io/nibras-privacy/delete-account.html</a><br>
-      <small>Note: Requests submitted via the web are processed within a maximum of 30 days from the request date.</small>
+      <small>Note: Requests submitted via the web are processed immediately after confirmation.</small>
     </div>
     <p>You also have the right to request a copy of your data or object to its processing by contacting us via email.</p>
 
@@ -378,14 +379,21 @@
   function showLang(lang) {
     const ar = document.querySelector('.ar');
     const en = document.querySelector('.en');
+    const btnAr = document.getElementById('btnAr');
+    const btnEn = document.getElementById('btnEn');
+    
     if (lang === 'ar') {
       ar.style.display = 'block';
       en.style.display = 'none';
+      btnAr.classList.add('active');
+      btnEn.classList.remove('active');
       document.documentElement.dir = 'rtl';
       document.documentElement.lang = 'ar';
     } else {
       ar.style.display = 'none';
       en.style.display = 'block';
+      btnAr.classList.remove('active');
+      btnEn.classList.add('active');
       document.documentElement.dir = 'ltr';
       document.documentElement.lang = 'en';
     }
