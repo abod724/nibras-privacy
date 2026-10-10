@@ -8,28 +8,20 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif;-webkit-tap-highlight-color:transparent}
 body{background:#f4f7fc;color:#1a2b3c;line-height:1.8;padding:20px;min-height:100dvh}
 .container{max-width:800px;margin:0 auto;background:#fff;border-radius:24px;padding:56px 32px 40px;box-shadow:0 10px 40px rgba(0,0,0,0.08);position:relative}
-
-/* ═══ أزرار اللغة الحديثة ═══ */
 .lang-switch{position:absolute;top:18px;left:18px;display:inline-flex;background:#eef2f7;border-radius:14px;padding:4px;gap:2px;box-shadow:inset 0 1px 3px rgba(0,0,0,0.06)}
 .lang-switch button{padding:8px 18px;border-radius:10px;border:none;background:transparent;color:#7a8ba0;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit;transition:all .35s cubic-bezier(.4,0,.2,1);letter-spacing:.3px;white-space:nowrap}
 .lang-switch button.active{background:#fff;color:#4a6a8a;box-shadow:0 2px 8px rgba(74,106,138,0.18),0 1px 2px rgba(0,0,0,0.04)}
 .lang-switch button:hover:not(.active){color:#4a6a8a;background:rgba(255,255,255,.5)}
-
-/* ═══ العناوين ═══ */
 h1{color:#4a6a8a;font-size:26px;margin-bottom:8px;text-align:center;font-weight:800;letter-spacing:-0.3px}
 .subtitle{color:#8b949e;font-size:13px;text-align:center;margin-bottom:32px}
 h2{color:#4a6a8a;font-size:17px;margin:26px 0 10px;font-weight:700;padding-right:14px;border-right:3px solid #4a6a8a;line-height:1.4}
 html[dir="ltr"] h2{border-right:none;border-left:3px solid #4a6a8a;padding-right:0;padding-left:14px}
-
-/* ═══ النصوص ═══ */
 p,li{color:#3a4553;font-size:15px;margin-bottom:10px;line-height:1.9}
 ul{padding-right:24px;margin-bottom:14px}
 html[dir="ltr"] ul{padding-right:0;padding-left:24px}
 li{margin-bottom:8px}
 a{color:#4a6a8a;text-decoration:none;font-weight:600;transition:color .2s}
 a:hover{color:#3a5a7a;text-decoration:underline}
-
-/* ═══ زر العودة الحديث ═══ */
 .wrap-back{text-align:center;margin-top:36px}
 .back{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;background:linear-gradient(135deg,#4a6a8a 0%,#3a5a7a 100%);color:#fff;border-radius:50px;text-decoration:none;font-weight:600;font-size:15px;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 6px 20px rgba(74,106,138,0.28),inset 0 1px 0 rgba(255,255,255,0.15);letter-spacing:.2px;position:relative;overflow:hidden;cursor:pointer}
 .back::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left .6s ease}
@@ -38,12 +30,9 @@ a:hover{color:#3a5a7a;text-decoration:underline}
 .back:active{transform:translateY(-1px);box-shadow:0 4px 12px rgba(74,106,138,0.3)}
 .back svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
 .back:hover svg{transform:translateX(-4px)}
-
-/* ═══ التذييل ═══ */
+html[dir="ltr"] .back:hover svg{transform:translateX(4px)}
 .footer{text-align:center;margin-top:32px;padding-top:20px;border-top:1px solid #eef1f6;color:#8b949e;font-size:12px}
 .hidden{display:none}
-
-/* ═══ الجوال ═══ */
 @media(max-width:520px){
   body{padding:12px}
   .container{padding:56px 20px 30px;border-radius:20px}
@@ -119,7 +108,7 @@ a:hover{color:#3a5a7a;text-decoration:underline}
     <p>لأي استفسار أو شكوى بخصوص هذه الشروط، يمكنك التواصل عبر البريد: <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a></p>
 
     <div class="wrap-back">
-      <a href="/" class="back">
+      <a href="https://nibras-al.onrender.com/login" class="back">
         <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         <span>العودة للرئيسية</span>
       </a>
@@ -182,7 +171,7 @@ a:hover{color:#3a5a7a;text-decoration:underline}
     <p>For any questions or complaints regarding these terms, contact us at: <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a></p>
 
     <div class="wrap-back">
-      <a href="/" class="back">
+      <a href="https://nibras-al.onrender.com/login" class="back">
         <svg viewBox="0 0 24 24" style="transform:rotate(180deg)"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
         <span>Back to Home</span>
       </a>
