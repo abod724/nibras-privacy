@@ -1,116 +1,86 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سياسة الخصوصية - نبراس GP</title>
+<title>سياسة الخصوصية - نبراس GP | Privacy Policy</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    background: #f4f7fc;
-    color: #1a2b3c;
-    line-height: 1.9;
-    padding: 20px;
-  }
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 40px 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-  }
-  h1 {
-    color: #4a6a8a;
-    border-bottom: 2px solid #eaeef2;
-    padding-bottom: 15px;
-    margin-bottom: 10px;
-    font-size: 26px;
-  }
-  h2 {
-    color: #4a6a8a;
-    margin-top: 30px;
-    margin-bottom: 12px;
-    font-size: 20px;
-    border-right: 4px solid #4a6a8a;
-    padding-right: 12px;
-  }
-  h3 {
-    color: #3a5a7a;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    font-size: 17px;
-  }
-  .date {
-    color: #8b949e;
-    font-size: 14px;
-    margin-bottom: 25px;
-  }
-  p, li {
-    margin-bottom: 12px;
-    font-size: 16px;
-  }
-  ul { padding-right: 25px; }
-  a { color: #4a6a8a; }
-  .lang-switch {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  .lang-switch button {
-    background: #4a6a8a;
-    color: #fff;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin: 0 5px;
-    font-size: 15px;
-  }
-  .lang-switch button:hover { background: #3a5a7a; }
-  .lang-switch button.active { background: #2c4a66; }
-  .en { display: none; direction: ltr; text-align: left; }
-  .en h2 { border-right: none; border-left: 4px solid #4a6a8a; padding-right: 0; padding-left: 12px; }
-  .en ul { padding-right: 0; padding-left: 25px; }
-  .highlight {
-    background: #fff8e1;
-    border-right: 4px solid #ffc107;
-    padding: 15px;
-    border-radius: 8px;
-    margin: 15px 0;
-    font-size: 15px;
-  }
-  .en .highlight {
-    border-right: none;
-    border-left: 4px solid #ffc107;
-  }
-  footer {
-    text-align: center;
-    color: #8b949e;
-    font-size: 14px;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #eaeef2;
-  }
-  @media (max-width: 500px) {
-    .container { padding: 20px 15px; }
-    h1 { font-size: 22px; }
-    h2 { font-size: 18px; }
-  }
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma,sans-serif;-webkit-tap-highlight-color:transparent}
+body{background:#f4f7fc;color:#1a2b3c;line-height:1.9;padding:20px;min-height:100dvh}
+.container{max-width:800px;margin:0 auto;background:#fff;padding:56px 32px 40px;border-radius:24px;box-shadow:0 10px 40px rgba(0,0,0,0.08);position:relative}
+
+/* ═══ أزرار اللغة الحديثة ═══ */
+.lang-switch{position:absolute;top:18px;left:18px;display:inline-flex;background:#eef2f7;border-radius:14px;padding:4px;gap:2px;box-shadow:inset 0 1px 3px rgba(0,0,0,0.06)}
+.lang-switch button{padding:8px 18px;border-radius:10px;border:none;background:transparent;color:#7a8ba0;font-weight:600;font-size:13px;cursor:pointer;font-family:inherit;transition:all .35s cubic-bezier(.4,0,.2,1);letter-spacing:.3px;white-space:nowrap}
+.lang-switch button.active{background:#fff;color:#4a6a8a;box-shadow:0 2px 8px rgba(74,106,138,0.18),0 1px 2px rgba(0,0,0,0.04)}
+.lang-switch button:hover:not(.active){color:#4a6a8a;background:rgba(255,255,255,.5)}
+
+/* ═══ العناوين ═══ */
+h1{color:#4a6a8a;border-bottom:2px solid #eaeef2;padding-bottom:15px;margin-bottom:10px;font-size:26px;font-weight:800;letter-spacing:-0.3px}
+h2{color:#4a6a8a;margin-top:30px;margin-bottom:12px;font-size:19px;font-weight:700;padding-right:14px;border-right:3px solid #4a6a8a;line-height:1.4}
+html[dir="ltr"] h2{border-right:none;border-left:3px solid #4a6a8a;padding-right:0;padding-left:14px}
+h3{color:#3a5a7a;margin-top:22px;margin-bottom:10px;font-size:17px;font-weight:700}
+.date{color:#8b949e;font-size:14px;margin-bottom:25px}
+
+/* ═══ النصوص ═══ */
+p,li{margin-bottom:12px;font-size:15.5px;color:#3a4553;line-height:1.95}
+ul{padding-right:25px;margin-bottom:14px}
+html[dir="ltr"] ul{padding-right:0;padding-left:25px}
+li{margin-bottom:8px}
+a{color:#4a6a8a;text-decoration:none;font-weight:600;transition:color .2s}
+a:hover{color:#3a5a7a;text-decoration:underline}
+strong{color:#1a2b3c}
+
+/* ═══ صندوق التنبيه ═══ */
+.highlight{background:#fff8e1;border-right:4px solid #ffc107;padding:15px 18px;border-radius:12px;margin:15px 0;font-size:15px;line-height:1.9}
+html[dir="ltr"] .highlight{border-right:none;border-left:4px solid #ffc107}
+
+/* ═══ زر العودة الحديث ═══ */
+.wrap-back{text-align:center;margin-top:40px}
+.back{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 28px;background:linear-gradient(135deg,#4a6a8a 0%,#3a5a7a 100%);color:#fff;border-radius:50px;text-decoration:none;font-weight:600;font-size:15px;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 6px 20px rgba(74,106,138,0.28),inset 0 1px 0 rgba(255,255,255,0.15);letter-spacing:.2px;position:relative;overflow:hidden;cursor:pointer}
+.back::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left .6s ease}
+.back:hover::before{left:100%}
+.back:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(74,106,138,0.4),inset 0 1px 0 rgba(255,255,255,0.2);text-decoration:none;color:#fff}
+.back:active{transform:translateY(-1px);box-shadow:0 4px 12px rgba(74,106,138,0.3)}
+.back svg{width:18px;height:18px;stroke:currentColor;stroke-width:2.5;fill:none;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.back:hover svg{transform:translateX(-4px)}
+html[dir="ltr"] .back:hover svg{transform:translateX(4px)}
+
+/* ═══ التذييل ═══ */
+footer{text-align:center;color:#8b949e;font-size:13px;margin-top:36px;padding-top:20px;border-top:1px solid #eaeef2}
+
+/* ═══ إخفاء/إظهار اللغات ═══ */
+.en{display:none}
+.ar{display:block}
+
+/* ═══ الجوال ═══ */
+@media(max-width:520px){
+  body{padding:12px}
+  .container{padding:56px 20px 30px;border-radius:20px}
+  h1{font-size:22px}
+  h2{font-size:17px}
+  h3{font-size:16px}
+  p,li{font-size:14.5px}
+  .lang-switch{top:14px;left:14px}
+  .lang-switch button{padding:7px 14px;font-size:12px}
+  .back{padding:13px 24px;font-size:14px}
+}
 </style>
 </head>
 <body>
 <div class="container">
 
   <div class="lang-switch">
-    <button onclick="showLang('ar')" id="btnAr" class="active">🇸🇦 العربية</button>
-    <button onclick="showLang('en')" id="btnEn">🇬🇧 English</button>
+    <button onclick="showLang('ar')" id="btnAr" class="active">العربية</button>
+    <button onclick="showLang('en')" id="btnEn">English</button>
   </div>
 
-  <!-- ================= النسخة العربية ================= -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════ النسخة العربية ═══════════════════ -->
+  <!-- ══════════════════════════════════════════════════════ -->
   <div class="ar">
     <h1>سياسة الخصوصية</h1>
-    <p class="date">آخر تحديث: 8 أكتوبر 2026</p>
+    <p class="date">آخر تحديث: أكتوبر 2026</p>
 
     <p>مرحبًا بك في تطبيق <strong>"نبراس GP"</strong>. نحن نأخذ خصوصيتك على محمل الجد. توضح سياسة الخصوصية هذه كيفية جمع بياناتك واستخدامها وحمايتها عند استخدامك لتطبيقنا. باستخدامك للخدمة، فإنك توافق على الممارسات الموضحة في هذه السياسة.</p>
 
@@ -236,12 +206,21 @@
       <li>📧 البريد الإلكتروني: <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a></li>
       <li>📱 الهاتف: <a href="tel:+966569361182">+966 56 936 1182</a></li>
     </ul>
+
+    <div class="wrap-back">
+      <a href="https://nibras-al.onrender.com/login" class="back">
+        <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <span>العودة للرئيسية</span>
+      </a>
+    </div>
   </div>
 
-  <!-- ================= English Version ================= -->
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════ English Version ═════════════════ -->
+  <!-- ══════════════════════════════════════════════════════ -->
   <div class="en">
     <h1>Privacy Policy</h1>
-    <p class="date">Last updated: October 8, 2026</p>
+    <p class="date">Last updated: October 2026</p>
 
     <p>Welcome to the <strong>"Nibras GP"</strong> application. We take your privacy seriously. This Privacy Policy explains how we collect, use, and protect your data when you use our application. By using the Service, you agree to the practices described in this policy.</p>
 
@@ -367,38 +346,55 @@
       <li>📧 Email: <a href="mailto:nibrasalsd@gmail.com">nibrasalsd@gmail.com</a></li>
       <li>📱 Phone: <a href="tel:+966569361182">+966 56 936 1182</a></li>
     </ul>
+
+    <div class="wrap-back">
+      <a href="https://nibras-al.onrender.com/login" class="back">
+        <svg viewBox="0 0 24 24" style="transform:rotate(180deg)"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+        <span>Back to Home</span>
+      </a>
+    </div>
   </div>
 
   <footer>
-    © 2026 نبراس GP. جميع الحقوق محفوظة. All rights reserved.
+    © 2026 نبراس GP - جميع الحقوق محفوظة. All rights reserved.
   </footer>
 
 </div>
 
 <script>
-  function showLang(lang) {
-    const ar = document.querySelector('.ar');
-    const en = document.querySelector('.en');
-    const btnAr = document.getElementById('btnAr');
-    const btnEn = document.getElementById('btnEn');
-    
-    if (lang === 'ar') {
-      ar.style.display = 'block';
-      en.style.display = 'none';
-      btnAr.classList.add('active');
-      btnEn.classList.remove('active');
-      document.documentElement.dir = 'rtl';
-      document.documentElement.lang = 'ar';
-    } else {
-      ar.style.display = 'none';
-      en.style.display = 'block';
-      btnAr.classList.remove('active');
-      btnEn.classList.add('active');
-      document.documentElement.dir = 'ltr';
-      document.documentElement.lang = 'en';
-    }
-  }
-</script>
+function showLang(lang){
+  var html = document.getElementById('htmlRoot');
+  var ar = document.querySelector('.ar');
+  var en = document.querySelector('.en');
+  var btnAr = document.getElementById('btnAr');
+  var btnEn = document.getElementById('btnEn');
 
+  if(lang === 'ar'){
+    ar.style.display = 'block';
+    en.style.display = 'none';
+    btnAr.classList.add('active');
+    btnEn.classList.remove('active');
+    html.setAttribute('dir','rtl');
+    html.setAttribute('lang','ar');
+    document.title = 'سياسة الخصوصية - نبراس GP';
+  } else {
+    ar.style.display = 'none';
+    en.style.display = 'block';
+    btnAr.classList.remove('active');
+    btnEn.classList.add('active');
+    html.setAttribute('dir','ltr');
+    html.setAttribute('lang','en');
+    document.title = 'Privacy Policy - Nibras GP';
+  }
+  try{ localStorage.setItem('nibras-privacy-lang', lang); }catch(e){}
+}
+
+(function(){
+  try{
+    var saved = localStorage.getItem('nibras-privacy-lang');
+    if(saved === 'en') showLang('en');
+  }catch(e){}
+})();
+</script>
 </body>
 </html>
